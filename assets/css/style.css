@@ -568,15 +568,17 @@ main, .footer { position: relative; z-index: 2; }
    PHOTOGRAPHY, IMAGE BANDS, SCHEMATICS & TECHNICAL LIBRARY
    ========================================================= */
 
-/* ---- hero background photo (rig at night) ---- */
-.hero { position: relative; isolation: isolate; }
-.hero__bg { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
-.hero__bg img { width: 100%; height: 100%; object-fit: cover; object-position: 70% 40%; opacity: .6; }
+/* ---- hero background photo (rig at night) — full-bleed, text on top ---- */
+.hero { position: relative; }
+.hero__bg { position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 100vw; z-index: 0; overflow: hidden; }
+.hero__inner, .hero__scroll { position: relative; z-index: 2; }
+.hero__bg img { width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: .55; }
 .hero__bg::after {
   content: ""; position: absolute; inset: 0;
   background:
-    linear-gradient(90deg, var(--abyss) 6%, rgba(4,17,31,.6) 52%, rgba(4,17,31,.15) 100%),
-    linear-gradient(180deg, rgba(4,17,31,.65) 0%, transparent 32%, var(--abyss) 97%);
+    linear-gradient(90deg, var(--abyss) 4%, rgba(4,17,31,.55) 50%, rgba(4,17,31,.12) 100%),
+    linear-gradient(180deg, rgba(4,17,31,.7) 0%, transparent 35%, var(--abyss) 98%);
 }
 
 /* ---- region panel photos ---- */
