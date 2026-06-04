@@ -23,6 +23,56 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Structured data (schema.org JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://troip.xyz/#org",
+        "name": "TROIB",
+        "alternateName": "Tri-Regional Ocean Infrastructure Blueprint",
+        "url": "https://troip.xyz/",
+        "logo": "https://troip.xyz/assets/favicon.svg",
+        "email": "invest@troip.xyz",
+        "description": "TROIB harnesses the ocean's thermal gradient across the Gulf of Mexico, Southeast Florida, and Southern California to deliver zero-emission baseload power, AI data-center cooling, freshwater, and critical minerals.",
+        "areaServed": ["Gulf of Mexico", "Southeast Florida", "Southern California", "United States"],
+        "knowsAbout": ["Ocean Thermal Energy Conversion", "Deep Sea Water Utilization", "Vacuum-flash desalination", "Zero Liquid Discharge", "Sea Water Air Conditioning", "Data-center cooling"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://troip.xyz/#website",
+        "url": "https://troip.xyz/",
+        "name": "TROIB — Tri-Regional Ocean Infrastructure Blueprint",
+        "publisher": { "@id": "https://troip.xyz/#org" },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://troip.xyz/#webpage",
+        "url": "https://troip.xyz/",
+        "name": "TROIB — Tri-Regional Ocean Infrastructure Blueprint",
+        "isPartOf": { "@id": "https://troip.xyz/#website" },
+        "about": { "@id": "https://troip.xyz/#org" },
+        "description": "The ocean is the largest solar battery on Earth. TROIB taps its thermal gradient to power AI, make water, and harvest minerals — zero emissions, four revenue streams.",
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "ItemList",
+        "name": "TROIB Engineering White Papers",
+        "itemListOrder": "https://schema.org/ItemListOrderAscending",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "url": "https://troip.xyz/papers/otec-thermodynamics", "name": "Closed-Cycle Ammonia OTEC: Thermodynamic Basis and Net Power Yield" },
+          { "@type": "ListItem", "position": 2, "url": "https://troip.xyz/papers/rig-to-datacenter", "name": "Co-Locating AI Compute on Decommissioned Deepwater Platforms" },
+          { "@type": "ListItem", "position": 3, "url": "https://troip.xyz/papers/swac-district-cooling", "name": "Sea Water Air Conditioning for Coastal Data and Urban Loads" },
+          { "@type": "ListItem", "position": 4, "url": "https://troip.xyz/papers/zld-mineral-recovery", "name": "Zero Liquid Discharge and Marine Mineral Recovery" }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <!-- Scroll progress (depth gauge) -->
@@ -329,7 +379,7 @@
       </div>
       <div class="schem-grid">
         <figure class="figure reveal">
-          <div class="figure__media"><img src="assets/diagrams/otec-cycle.svg" alt="Closed-cycle ammonia OTEC schematic showing evaporator, turbine-generator, condenser and the cold-water loop" loading="lazy" /></div>
+          <div class="figure__media"><img src="assets/diagrams/otec-cycle.svg" alt="Closed-cycle ammonia OTEC schematic showing evaporator, turbine-generator, condenser and the cold-water loop" loading="lazy" style="width:100%;height:auto;display:block;aspect-ratio:1000/580" /></div>
           <figcaption>
             <span class="figure__tag">FIG 01 — POWER CYCLE</span>
             <h3>Closed-Cycle Ammonia OTEC</h3>
@@ -337,7 +387,7 @@
           </figcaption>
         </figure>
         <figure class="figure reveal">
-          <div class="figure__media"><img src="assets/diagrams/rig-retrofit.svg" alt="Cross-section of a Spar platform retrofit with AI modules on deck and a 3,000 foot cold-water pipe in the moonpool" loading="lazy" /></div>
+          <div class="figure__media"><img src="assets/diagrams/rig-retrofit.svg" alt="Cross-section of a Spar platform retrofit with AI modules on deck and a 3,000 foot cold-water pipe in the moonpool" loading="lazy" style="width:100%;height:auto;display:block;aspect-ratio:680/640" /></div>
           <figcaption>
             <span class="figure__tag">FIG 02 — RIG RETROFIT</span>
             <h3>Spar Platform → AI Compute</h3>
@@ -345,7 +395,7 @@
           </figcaption>
         </figure>
         <figure class="figure reveal">
-          <div class="figure__media"><img src="assets/diagrams/swac-loop.svg" alt="Florida SWAC schematic: offshore plantship feeds the grid and a mainland district cooling loop" loading="lazy" /></div>
+          <div class="figure__media"><img src="assets/diagrams/swac-loop.svg" alt="Florida SWAC schematic: offshore plantship feeds the grid and a mainland district cooling loop" loading="lazy" style="width:100%;height:auto;display:block;aspect-ratio:1000/560" /></div>
           <figcaption>
             <span class="figure__tag">FIG 03 — URBAN COOLING</span>
             <h3>Gulf-Stream SWAC District Loop</h3>
@@ -353,7 +403,7 @@
           </figcaption>
         </figure>
         <figure class="figure reveal">
-          <div class="figure__media"><img src="assets/diagrams/zld-train.svg" alt="Vacuum-flash desalination and zero liquid discharge crystallization schematic" loading="lazy" /></div>
+          <div class="figure__media"><img src="assets/diagrams/zld-train.svg" alt="Vacuum-flash desalination and zero liquid discharge crystallization schematic" loading="lazy" style="width:100%;height:auto;display:block;aspect-ratio:1000/560" /></div>
           <figcaption>
             <span class="figure__tag">FIG 04 — WATER &amp; MINERALS</span>
             <h3>Vacuum-Flash Desal + ZLD</h3>
