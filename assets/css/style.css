@@ -677,3 +677,12 @@ main, .footer { position: relative; z-index: 2; }
   font-family: var(--font-mono); font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; color: var(--teal); }
 .ev-ad__stamp .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 12px var(--teal); }
 .ev-ad__disclaim { margin-top: 1.6rem; font-family: var(--font-mono); font-size: .68rem; color: var(--faint); max-width: 64ch; }
+
+/* ---- paper-card inner links (Read / PDF) ---- */
+.paper-card__main { display: flex; flex-direction: column; }
+.paper-card__main h3 a { color: inherit; transition: color .25s var(--ease); }
+.paper-card__main h3 a:hover { color: var(--teal); }
+.paper-card__links { margin-top: .8rem; display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; font-family: var(--font-mono); font-size: .7rem; }
+.paper-card__links .doc { color: var(--faint); margin-right: .2rem; }
+.paper-card__links a { color: var(--teal); border: 1px solid var(--line-bright); border-radius: 7px; padding: .28rem .55rem; transition: .25s var(--ease); }
+.paper-card__links a:hover { background: rgba(0,224,199,.1); }
