@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 580" role="img" aria-label="Closed-cycle ammonia OTEC schematic: warm surface seawater boils ammonia working fluid to drive a turbine-generator; cold deep seawater condenses it in a continuous loop.">
+  <defs>
+    <linearGradient id="oc-sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a2238"/><stop offset="1" stop-color="#03101c"/>
+    </linearGradient>
+    <marker id="oc-arrW" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff7a45"/></marker>
+    <marker id="oc-arrC" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#00e0c7"/></marker>
+    <marker id="oc-arrV" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ffd166"/></marker>
+    <style>
+      .lbl{font-family:'Space Mono',ui-monospace,monospace;fill:#c9d8de;font-size:15px}
+      .sub{font-family:'Space Mono',ui-monospace,monospace;fill:#7e96a4;font-size:12px}
+      .tag{font-family:'Space Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.06em}
+      .box{fill:#0e2c45;stroke:#00e0c7;stroke-opacity:.5;stroke-width:1.5;rx:10}
+      .warm{stroke:#ff7a45;stroke-width:3;fill:none}
+      .cold{stroke:#00e0c7;stroke-width:3;fill:none}
+      .vap{stroke:#ffd166;stroke-width:3;fill:none;stroke-dasharray:2 6;stroke-linecap:round}
+    </style>
+  </defs>
+
+  <rect width="1000" height="580" rx="16" fill="url(#oc-sea)"/>
+  <!-- surface / depth bands -->
+  <rect x="0" y="0" width="1000" height="120" fill="#ff7a45" opacity="0.06"/>
+  <rect x="0" y="460" width="1000" height="120" fill="#2a7bff" opacity="0.06"/>
+  <text x="24" y="34" class="tag" fill="#ff7a45">WARM SURFACE LAYER · ~25 °C</text>
+  <text x="24" y="508" class="tag" fill="#2ad4ff">DEEP COLD LAYER · ~4 °C · 1,000 m</text>
+
+  <!-- WARM seawater intake -->
+  <path class="warm" marker-end="url(#oc-arrW)" d="M70,150 H250"/>
+  <text x="70" y="138" class="sub">Warm seawater intake</text>
+  <!-- Evaporator -->
+  <rect class="box" x="250" y="120" width="150" height="80"/>
+  <text x="325" y="156" class="lbl" text-anchor="middle">EVAPORATOR</text>
+  <text x="325" y="178" class="sub" text-anchor="middle">boils NH₃ working fluid</text>
+  <!-- warm discharge -->
+  <path class="warm" marker-end="url(#oc-arrW)" d="M325,200 V250 H120 V165" opacity=".6"/>
+  <text x="130" y="245" class="sub">warm return ~22 °C</text>
+
+  <!-- ammonia VAPOR up to turbine -->
+  <path class="vap" marker-end="url(#oc-arrV)" d="M400,150 H560"/>
+  <text x="430" y="138" class="sub" fill="#ffd166">NH₃ vapor (high P)</text>
+
+  <!-- TURBINE + GENERATOR -->
+  <rect class="box" x="560" y="115" width="120" height="90"/>
+  <polygon points="575,160 615,130 615,190" fill="#ffd166" opacity=".85"/>
+  <polygon points="665,160 625,130 625,190" fill="#ffd166" opacity=".55"/>
+  <text x="620" y="225" class="lbl" text-anchor="middle">TURBINE</text>
+  <circle cx="760" cy="160" r="34" fill="#0e2c45" stroke="#ffd166" stroke-width="2"/>
+  <text x="760" y="156" class="lbl" text-anchor="middle">GEN</text>
+  <text x="760" y="172" class="sub" text-anchor="middle">~</text>
+  <line x1="680" y1="160" x2="726" y2="160" stroke="#ffd166" stroke-width="4"/>
+  <!-- power output -->
+  <path d="M806,160 H900 l-14,-10 m14,10 l-14,10" stroke="#00e0c7" stroke-width="3" fill="none"/>
+  <text x="824" y="150" class="tag" fill="#00e0c7">NET POWER →</text>
+  <text x="824" y="186" class="sub">to AI load / grid</text>
+
+  <!-- exhaust vapor down to condenser -->
+  <path class="vap" marker-end="url(#oc-arrV)" d="M620,205 V300 H400" opacity=".8"/>
+  <text x="470" y="292" class="sub" fill="#ffd166">low-P vapor</text>
+
+  <!-- CONDENSER -->
+  <rect class="box" x="250" y="300" width="150" height="80"/>
+  <text x="325" y="336" class="lbl" text-anchor="middle">CONDENSER</text>
+  <text x="325" y="358" class="sub" text-anchor="middle">liquefies NH₃</text>
+
+  <!-- liquid ammonia pumped back (working-fluid loop) -->
+  <circle cx="180" cy="340" r="26" fill="#0e2c45" stroke="#00e0c7" stroke-width="2"/>
+  <text x="180" y="345" class="sub" text-anchor="middle">PUMP</text>
+  <path class="cold" marker-end="url(#oc-arrC)" d="M250,340 H206" />
+  <path class="cold" marker-end="url(#oc-arrV)" d="M180,314 V150" stroke="#ffd166"/>
+  <text x="44" y="300" class="sub" fill="#ffd166">liquid NH₃ ↑</text>
+
+  <!-- COLD seawater from depth into condenser -->
+  <path class="cold" marker-end="url(#oc-arrC)" d="M325,520 V380"/>
+  <text x="150" y="452" class="sub" fill="#00e0c7">cold seawater 4 °C</text>
+  <text x="150" y="470" class="sub" fill="#00e0c7">3,000 ft CWP intake</text>
+  <!-- cold discharge -->
+  <path class="cold" marker-end="url(#oc-arrC)" d="M400,340 H470 V520" opacity=".5"/>
+  <text x="486" y="452" class="sub">cold return ~8 °C</text>
+
+  <!-- closed-loop caption -->
+  <text x="500" y="556" class="tag" fill="#8fa6b2" text-anchor="middle">CLOSED RANKINE LOOP — WORKING FLUID: ANHYDROUS AMMONIA (NH₃) · ΔT ≈ 20 °C</text>
+</svg>

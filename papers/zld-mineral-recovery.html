@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zero Liquid Discharge and Marine Mineral Recovery — TROIB Engineering Brief</title>
+  <meta name="description" content="Vacuum-flash desalination producing up to 120 MGD potable water followed by zero-liquid-discharge fractional crystallization of brine into salts, magnesium, and battery-grade minerals. Conceptual engineering brief." />
+  <meta name="theme-color" content="#04111f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="paper.css" />
+</head>
+<body>
+  <div class="bg-nothing" aria-hidden="true"></div>
+  <a class="paper-nav" href="../index.html">&larr; Back to TROIB</a>
+  <button class="print-btn" onclick="window.print()">&#9113; Print / Save as PDF</button>
+
+  <article class="doc">
+
+    <!-- ===================== COVER ===================== -->
+    <header class="cover">
+      <p class="eyebrow">TROIB &middot; Engineering Brief</p>
+      <h1 class="title">Zero Liquid Discharge and Marine Mineral Recovery</h1>
+      <p class="subtitle">A shore-based Southern California Deep Sea Water Utilization train: vacuum-flash desalination producing up to 120&nbsp;MGD of potable water, followed by zero-liquid-discharge fractional crystallization of the brine into salts, magnesium, and battery-grade minerals &mdash; with no toxic discharge to the sea.</p>
+      <div class="meta-row">
+        <span><b>Document No.</b> TROIB-EB-04</span>
+        <span><b>Revision</b> A</span>
+        <span><b>Classification:</b> Conceptual / Illustrative</span>
+        <span><b>Date:</b> 2026</span>
+      </div>
+    </header>
+
+    <!-- ===================== DISCLAIMER ===================== -->
+    <aside class="disclaimer">
+      <strong>Conceptual Engineering Brief</strong>
+      Figures, performance estimates, and projections are illustrative and forward-looking; they describe a proposed system architecture and do not represent built, measured, or independently verified results.
+    </aside>
+
+    <!-- ===================== ABSTRACT ===================== -->
+    <section class="abstract">
+      <h2>Abstract</h2>
+      <p>The TROIB Southern California zone is a shore-based, non-power Deep Sea Water Utilization (DSWU) facility. It first desalinates seawater by <strong>vacuum-flash evaporation</strong> &mdash; boiling seawater at ambient temperature under low pressure, at roughly one-quarter the energy of high-pressure reverse osmosis &mdash; producing up to 120&nbsp;MGD of potable water. The concentrated brine is then not discharged but processed through a <strong>Zero Liquid Discharge (ZLD)</strong> train of sequential, solubility-driven crystallization stages that fractionate the dissolved salts: sodium chloride first, then magnesium compounds, then trace battery-grade species such as lithium carbonate and potassium chloride. The result is a saleable mineral stream &mdash; &asymp;1.4&nbsp;M&nbsp;t/yr of salts, 68,000&nbsp;t/yr of magnesium, and &asymp;950&nbsp;t/yr of battery-grade minerals at ten-year scale &mdash; and the elimination of the hypersaline brine plume that has triggered environmental litigation against conventional desalination. This brief develops the seawater-composition basis, the staged crystallization logic, and the product-yield accounting.</p>
+    </section>
+
+    <!-- ===================== 1 ===================== -->
+    <h2 class="sec">Seawater as Feedstock</h2>
+    <p>Seawater is not merely a water source; it is a dilute, continuously replenished ore body. Standard seawater carries &asymp;35&nbsp;g/L of total dissolved solids (TDS), dominated by six major ions. Table&nbsp;1 lists the conventional major-ion composition that defines the TROIB feedstock.</p>
+
+    <div class="tbl-wrap">
+      <table class="data">
+        <caption>Representative major-ion composition of standard seawater (~35 g/L TDS).</caption>
+        <thead>
+          <tr><th>Ion</th><th>Species</th><th>Concentration</th><th>% of TDS</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Chloride</td><td>Cl<sup>&minus;</sup></td><td class="num">~19.4 g/L</td><td class="num">55.0 %</td></tr>
+          <tr><td>Sodium</td><td>Na<sup>+</sup></td><td class="num">~10.8 g/L</td><td class="num">30.6 %</td></tr>
+          <tr><td>Sulfate</td><td>SO<sub>4</sub><sup>2&minus;</sup></td><td class="num">~2.7 g/L</td><td class="num">7.7 %</td></tr>
+          <tr><td>Magnesium</td><td>Mg<sup>2+</sup></td><td class="num">~1.3 g/L</td><td class="num">3.7 %</td></tr>
+          <tr><td>Calcium</td><td>Ca<sup>2+</sup></td><td class="num">~0.41 g/L</td><td class="num">1.2 %</td></tr>
+          <tr><td>Potassium</td><td>K<sup>+</sup></td><td class="num">~0.39 g/L</td><td class="num">1.1 %</td></tr>
+          <tr><td>Trace (Li, B, Br, &hellip;)</td><td>&mdash;</td><td class="num">&lt;0.1 g/L</td><td class="num">&lt;0.7 %</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>The TROIB design treats every one of these ions as a product rather than a waste. The 4&nbsp;&deg;C deep-ocean intake shared with the broader TROIB network supplies clean, nutrient-rich, low-biofouling feedwater drawn below the photic zone, simplifying pretreatment relative to a surface intake.</p>
+
+    <!-- ===================== 2 ===================== -->
+    <h2 class="sec">Vacuum-Flash Desalination</h2>
+    <p>Reverse osmosis forces water through a membrane against osmotic pressure, demanding high-pressure pumping (typically 55&ndash;70&nbsp;bar) and producing a hypersaline reject. TROIB instead uses <strong>vacuum-flash evaporation</strong>: seawater is admitted to a chamber held below the saturation pressure for its temperature, so a fraction of it &ldquo;flashes&rdquo; to vapour <em>at ambient temperature</em> without external boiling heat. The vapour is condensed against the cold deep-seawater stream to yield distilled potable water, while the chamber liquor grows progressively more concentrated.</p>
+    <p>Because the phase change is driven by pressure reduction rather than membrane pressurization or thermal boiling, the process runs at roughly <strong>one-quarter the energy</strong> of high-pressure RO in this conceptual design, and it tolerates the rising salinity that would foul or osmotically defeat a membrane. Multiple flash stages in series progressively concentrate the brine toward the saturation points needed for crystallization.</p>
+
+    <figure class="fig">
+      <img src="../assets/diagrams/zld-train.svg" style="width:100%" alt="Vacuum-flash desalination and zero-liquid-discharge crystallization train schematic, showing seawater feed flashing to potable water then sequential crystallizers producing sodium chloride, magnesium compounds, and battery-grade minerals." />
+      <figcaption>Vacuum-flash desalination + ZLD crystallization train. Seawater flashes to potable water in low-pressure chambers; the concentrating brine passes through sequential, solubility-driven crystallizers that precipitate NaCl, then magnesium compounds, then trace Li/K species &mdash; leaving no liquid effluent to discharge.</figcaption>
+    </figure>
+
+    <!-- ===================== 3 ===================== -->
+    <h2 class="sec">Zero Liquid Discharge by Fractional Crystallization</h2>
+    <p>Once desalination has removed most of the water, the remaining concentrated brine enters the ZLD train. The governing principle is <strong>differential solubility</strong>: as water is progressively removed, each dissolved salt reaches saturation and crystallizes at a different point in the concentration sequence. By controlling the degree of evaporation and temperature at each stage, the salts are separated rather than co-precipitated into a useless mixed sludge.</p>
+
+    <h3 class="sub">Crystallization sequence</h3>
+    <p><strong>Stage 1 &mdash; sodium chloride.</strong> NaCl is by far the most abundant salt and the least soluble of the majors at high concentration, so it crystallizes first as the brine is concentrated, producing the bulk salt product. <strong>Stage 2 &mdash; magnesium compounds.</strong> With NaCl removed, further evaporation drives magnesium chloride / magnesium hydroxide precipitation, the basis of the magnesium product. <strong>Stage 3 &mdash; trace battery-grade species.</strong> The final mother liquor, now enriched in the most soluble and rarest ions, is processed to recover lithium carbonate (Li<sub>2</sub>CO<sub>3</sub>) and potassium chloride (KCl). Because each stage takes its feed from the prior stage&rsquo;s residual liquor, <em>no</em> stream leaves the plant as liquid waste &mdash; the defining property of Zero Liquid Discharge.</p>
+
+    <div class="specs">
+      <div class="spec"><div class="v">120<small>&nbsp;MGD</small></div><div class="k">Potable water output</div></div>
+      <div class="spec"><div class="v">~&frac14;</div><div class="k">Energy vs high-pressure RO</div></div>
+      <div class="spec"><div class="v">35<small>&nbsp;g/L</small></div><div class="k">Feed TDS</div></div>
+      <div class="spec"><div class="v">0</div><div class="k">Liquid brine discharged</div></div>
+    </div>
+
+    <!-- ===================== 4 ===================== -->
+    <h2 class="sec">Product Yields at Ten-Year Scale</h2>
+    <p>Tying the crystallization train to the major-ion inventory of the processed feed gives the illustrative ten-year product slate in Table&nbsp;2. The salt tonnage tracks the dominant Na<sup>+</sup>/Cl<sup>&minus;</sup> fraction; magnesium tracks the &asymp;1.3&nbsp;g/L Mg<sup>2+</sup> content; and the battery-grade stream represents the small but high-value lithium and potassium recovery from the final liquor.</p>
+
+    <div class="tbl-wrap">
+      <table class="data">
+        <caption>Illustrative ten-year mineral product slate (TROIB SoCal DSWU).</caption>
+        <thead>
+          <tr><th>Product</th><th>Principal species</th><th>Yr-10 yield</th><th>Source fraction</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Bulk salts</td><td>NaCl</td><td class="num">~1.4 M t/yr</td><td>Na<sup>+</sup> / Cl<sup>&minus;</sup> majors</td></tr>
+          <tr><td>Magnesium</td><td>MgCl<sub>2</sub> / Mg(OH)<sub>2</sub></td><td class="num">~68,000 t/yr</td><td>Mg<sup>2+</sup> (~3.7 % TDS)</td></tr>
+          <tr><td>Battery-grade minerals</td><td>Li<sub>2</sub>CO<sub>3</sub>, KCl</td><td class="num">~950 t/yr</td><td>trace / final liquor</td></tr>
+          <tr><td>Potable water</td><td>H<sub>2</sub>O</td><td class="num">up to 120 MGD</td><td>vacuum-flash distillate</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>These four outputs convert a single seawater intake into a multi-product revenue stream &mdash; water utility, commodity salt, industrial magnesium, and critical battery minerals &mdash; without the fuel cost or carbon footprint of mining or high-pressure membrane desalination.</p>
+
+    <!-- ===================== 5 ===================== -->
+    <h2 class="sec">Environmental and Regulatory Advantage</h2>
+    <p>Conventional seawater desalination's central liability is its reject stream: a hypersaline, often warm brine discharged back to the coastal zone, where its density causes it to blanket and de-oxygenate the seabed. This plume has been the basis of permitting delays and litigation against major desalination projects in California and elsewhere.</p>
+    <p>By design, the TROIB ZLD train produces <strong>no liquid effluent</strong>. Every dissolved constituent leaves the plant as a dry, saleable solid, and the only water leaving is potable. This removes the brine-discharge plume entirely, converting the single largest regulatory and environmental obstacle of coastal desalination into a revenue-generating product stream &mdash; and aligning the facility with zero-discharge permitting expectations rather than fighting them.</p>
+
+    <!-- ===================== NOMENCLATURE ===================== -->
+    <h2 class="sec">Nomenclature</h2>
+    <table class="nomen">
+      <tr><th>DSWU</th><td>Deep Sea Water Utilization (shore-based, non-power)</td></tr>
+      <tr><th>ZLD</th><td>Zero Liquid Discharge</td></tr>
+      <tr><th>TDS</th><td>Total Dissolved Solids (g/L)</td></tr>
+      <tr><th>RO</th><td>Reverse Osmosis</td></tr>
+      <tr><th>MGD</th><td>Million Gallons per Day</td></tr>
+      <tr><th>NaCl</th><td>Sodium chloride (bulk salt product)</td></tr>
+      <tr><th>MgCl<sub>2</sub></th><td>Magnesium chloride / magnesium product</td></tr>
+      <tr><th>Li<sub>2</sub>CO<sub>3</sub></th><td>Lithium carbonate (battery-grade)</td></tr>
+      <tr><th>KCl</th><td>Potassium chloride</td></tr>
+    </table>
+
+    <!-- ===================== REFERENCES ===================== -->
+    <h2 class="sec">Selected References (illustrative)</h2>
+    <ol class="refs">
+      <li>U.S. Department of Energy. <em>Zero Liquid Discharge and Resource Recovery from Desalination Brines.</em> Conceptual reference, illustrative.</li>
+      <li>National Alliance for Water Innovation. <em>Selective Mineral Recovery from Hypersaline Brines.</em> Illustrative bibliographic entry.</li>
+      <li>Stewart, R. H. <em>Introduction to Physical Oceanography: Seawater Composition and Salinity.</em> Illustrative bibliographic entry.</li>
+      <li>State Water Resources Control Board. <em>Desalination Brine Discharge: Ocean Plan Amendment Guidance.</em> Conceptual reference, illustrative.</li>
+      <li>TROIB Project. <em>Engineering Brief TROIB-EB-01: Closed-Cycle Ammonia OTEC.</em> Companion document.</li>
+    </ol>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="doc-footer">
+      <div class="brand">&copy; 2026 TROIB &middot; troip.xyz</div>
+      <p class="fine">Conceptual engineering brief. Figures, performance estimates, and projections are illustrative and forward-looking; they describe a proposed system architecture and do not represent built, measured, or independently verified results.</p>
+      <span class="print-footnote">TROIB-EB-04 &middot; Zero Liquid Discharge &amp; Mineral Recovery &middot; Conceptual / Illustrative &middot; &copy; 2026 troip.xyz</span>
+    </footer>
+
+  </article>
+</body>
+</html>

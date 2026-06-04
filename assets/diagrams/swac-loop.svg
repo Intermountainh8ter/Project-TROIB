@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" role="img" aria-label="Southeast Florida SWAC schematic: an offshore OTEC plantship sends baseload power to the grid via subsea cable and pumps cold deep water to a mainland Sea Water Air Conditioning district loop cooling downtown buildings.">
+  <defs>
+    <linearGradient id="sw-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a2238"/><stop offset="1" stop-color="#03101c"/></linearGradient>
+    <marker id="sw-c" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#00e0c7"/></marker>
+    <marker id="sw-g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ffd166"/></marker>
+    <marker id="sw-w" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#8fa6b2"/></marker>
+    <style>
+      .l{font-family:'Space Mono',ui-monospace,monospace;fill:#c9d8de;font-size:14px}
+      .s{font-family:'Space Mono',ui-monospace,monospace;fill:#7e96a4;font-size:11.5px}
+      .t{font-family:'Space Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.06em}
+      .bx{fill:#0e2c45;stroke:#00e0c7;stroke-opacity:.5;stroke-width:1.5}
+    </style>
+  </defs>
+  <rect width="1000" height="560" rx="16" fill="url(#sw-bg)"/>
+  <!-- water vs land -->
+  <rect x="0" y="0" width="520" height="560" fill="#0a2a44" opacity="0.25"/>
+  <line x1="520" y1="0" x2="520" y2="560" stroke="#2ad4ff" stroke-opacity=".35" stroke-dasharray="4 5"/>
+  <text x="24" y="34" class="t" fill="#2ad4ff">GULF STREAM · OFFSHORE 3–5 mi</text>
+  <text x="700" y="34" class="t" fill="#ffd166" text-anchor="middle">MAINLAND · DOWNTOWN DISTRICT</text>
+
+  <!-- PLANTSHIP -->
+  <rect class="bx" x="70" y="150" width="170" height="80" rx="10"/>
+  <text x="155" y="184" class="l" text-anchor="middle">OTEC PLANTSHIP</text>
+  <text x="155" y="206" class="s" text-anchor="middle">multi-MW floating</text>
+  <!-- moored cold water pipe -->
+  <path d="M155,230 V470" stroke="#00e0c7" stroke-width="6" marker-end="url(#sw-c)"/>
+  <text x="168" y="430" class="s" fill="#00e0c7">CWP intake 4 °C</text>
+  <text x="60" y="500" class="t" fill="#2ad4ff">▼ DEEP COLD WATER</text>
+
+  <!-- subsea power cable to grid -->
+  <path d="M240,176 H760 V120" stroke="#ffd166" stroke-width="3" fill="none" marker-end="url(#sw-g)"/>
+  <text x="430" y="166" class="s" fill="#ffd166">HV subsea cable → baseload electricity</text>
+  <rect class="bx" x="700" y="78" width="120" height="44" stroke="#ffd166"/>
+  <text x="760" y="105" class="l" text-anchor="middle">FPL GRID</text>
+
+  <!-- cold water to shore -> SWAC plant -->
+  <path d="M210,210 H560 V300" stroke="#00e0c7" stroke-width="4" fill="none" marker-end="url(#sw-c)"/>
+  <rect class="bx" x="500" y="300" width="150" height="70"/>
+  <text x="575" y="330" class="l" text-anchor="middle">SWAC PLANT</text>
+  <text x="575" y="350" class="s" text-anchor="middle">heat-exchange station</text>
+
+  <!-- downtown buildings served by the district loop -->
+  <g>
+    <rect x="705" y="190" width="40" height="170" fill="#0e2c45" stroke="#2ad4ff" stroke-width="1.5"/>
+    <rect x="758" y="150" width="46" height="210" fill="#0e2c45" stroke="#2ad4ff" stroke-width="1.5"/>
+    <rect x="817" y="225" width="40" height="135" fill="#0e2c45" stroke="#2ad4ff" stroke-width="1.5"/>
+    <rect x="870" y="180" width="44" height="180" fill="#0e2c45" stroke="#2ad4ff" stroke-width="1.5"/>
+  </g>
+  <text x="702" y="138" class="s">carrier hotels · edge DCs · high-rises</text>
+  <!-- district loop routed BELOW the buildings: chilled supply + warm return -->
+  <path d="M575,370 V410 H940" stroke="#00e0c7" stroke-width="3" fill="none" marker-end="url(#sw-c)"/>
+  <text x="700" y="402" class="s" fill="#00e0c7">chilled supply 7–10 °C</text>
+  <path d="M940,438 H575 V372" stroke="#8fa6b2" stroke-width="3" fill="none" marker-end="url(#sw-w)" opacity=".8"/>
+  <text x="700" y="458" class="s">warm return</text>
+
+  <!-- caption -->
+  <text x="500" y="540" class="t" fill="#8fa6b2" text-anchor="middle">REPLACES MECHANICAL CHILLERS — TENANT PUE 1.02–1.05 · OFFSETS URBAN COOLING LOAD</text>
+</svg>

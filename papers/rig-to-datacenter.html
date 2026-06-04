@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Co-Locating AI Compute on Decommissioned Deepwater Platforms — TROIB Engineering Brief</title>
+  <meta name="description" content="Retrofitting late-life Spar and Tension-Leg Platforms in the Gulf of Mexico with OTEC power blocks and seawater-cooled AI training modules for near-1.0 PUE. Conceptual engineering brief." />
+  <meta name="theme-color" content="#04111f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="paper.css" />
+</head>
+<body>
+  <div class="bg-nothing" aria-hidden="true"></div>
+  <a class="paper-nav" href="../index.html">&larr; Back to TROIB</a>
+  <button class="print-btn" onclick="window.print()">&#9113; Print / Save as PDF</button>
+
+  <article class="doc">
+
+    <!-- ===================== COVER ===================== -->
+    <header class="cover">
+      <p class="eyebrow">TROIB &middot; Engineering Brief</p>
+      <h1 class="title">Co-Locating AI Compute on Decommissioned Deepwater Platforms</h1>
+      <p class="subtitle">A retrofit architecture that intercepts late-life Spar and Tension-Leg Platforms in the Gulf of Mexico, installs an OTEC power block on deck, and cools direct-to-chip AI training modules with 4&nbsp;&deg;C seawater &mdash; driving facility PUE toward 1.02&ndash;1.05 entirely off-grid.</p>
+      <div class="meta-row">
+        <span><b>Document No.</b> TROIB-EB-02</span>
+        <span><b>Revision</b> A</span>
+        <span><b>Classification:</b> Conceptual / Illustrative</span>
+        <span><b>Date:</b> 2026</span>
+      </div>
+    </header>
+
+    <!-- ===================== DISCLAIMER ===================== -->
+    <aside class="disclaimer">
+      <strong>Conceptual Engineering Brief</strong>
+      Figures, performance estimates, and projections are illustrative and forward-looking; they describe a proposed system architecture and do not represent built, measured, or independently verified results.
+    </aside>
+
+    <!-- ===================== ABSTRACT ===================== -->
+    <section class="abstract">
+      <h2>Abstract</h2>
+      <p>The Gulf of Mexico holds hundreds of deepwater production platforms approaching end-of-field life. TROIB proposes to intercept late-life Spar and Tension-Leg Platforms (TLPs) in the Mississippi Canyon and Alaminos Canyon protraction areas before decommissioning, retrofit their moonpools for 915&nbsp;m (3,000&nbsp;ft) composite cold-water pipes, mount an Ocean Thermal Energy Conversion (OTEC) power block on deck, and deploy ruggedized, liquid-cooled direct-to-chip AI training modules in the same footprint. Because 4&nbsp;&deg;C deep seawater is used directly as the cooling sink, mechanical-chiller overhead is nearly eliminated and facility Power Usage Effectiveness (PUE) approaches 1.02&ndash;1.05. The platform is fully off-grid; surplus OTEC power is converted to green hydrogen and ammonia for export. Acquiring the host structure through the federal &ldquo;Rigs-to-Reefs&rdquo; framework removes up to 40&nbsp;% of structural and anchoring capital cost. This brief develops the PUE rationale and the seawater heat-rejection mass-balance that sizes the cooling system.</p>
+    </section>
+
+    <!-- ===================== 1 ===================== -->
+    <h2 class="sec">Why Re-Use a Platform</h2>
+    <p>A deepwater Spar or TLP is, in engineering terms, a pre-built deep-ocean access structure: it is already station-kept over thousands of metres of water, already carries a moonpool through its centre, and already supports thousands of tonnes of topside equipment. Decommissioning such a structure is expensive and carbon-intensive. The TROIB thesis is that the very attributes that make a platform costly to remove &mdash; deep-water station-keeping, structural deck capacity, and a central moonpool &mdash; are exactly what an offshore OTEC-plus-compute facility requires.</p>
+    <p>Under the U.S. <strong>Rigs-to-Reefs</strong> framework, operators may transfer qualifying structures in place rather than fully removing them. TROIB extends this concept: instead of converting a platform solely into an artificial reef, the sub-sea jacket and mooring serve as the reef habitat while the topside is repurposed for energy and compute. Avoiding new-build hull fabrication and deepwater anchoring is estimated to remove up to <strong>40&nbsp;%</strong> of the structural and anchoring portion of capital expenditure.</p>
+
+    <!-- ===================== 2 ===================== -->
+    <h2 class="sec">Retrofit Architecture</h2>
+    <p>The retrofit reorganizes the platform into three stacked functional zones, shown in cross-section in Figure&nbsp;1.</p>
+
+    <h3 class="sub">Moonpool and cold-water pipe</h3>
+    <p>The existing drilling moonpool is repurposed as the structural pass-through for a 915&nbsp;m composite (fibre-reinforced-polymer) cold-water pipe. Routing the CWP through the moonpool rather than over the side protects it from wave loading at the splash zone and uses the hull as the reaction structure for pipe weight and current drag. The CWP delivers the &asymp;4&nbsp;&deg;C cold seawater that serves both the OTEC condenser and the compute cooling loop.</p>
+
+    <h3 class="sub">Deck power block</h3>
+    <p>The main deck carries the OTEC closed-cycle ammonia power block &mdash; evaporator, turbine-generator, condenser, and feed pump &mdash; described in companion brief TROIB-EB-01. The power block converts the 20&nbsp;&deg;C thermal gradient into net electricity that powers the compute modules directly, with no grid interconnection.</p>
+
+    <h3 class="sub">Compute modules</h3>
+    <p>AI training hardware is housed in ruggedized, marine-rated modules using <strong>direct-to-chip liquid cooling</strong> and, for the densest racks, single-phase <strong>immersion cooling</strong>. A closed dielectric or water-glycol loop carries heat from the silicon to a titanium plate heat exchanger, where it is rejected to the cold seawater stream. Crucially, the cold sink is already at 4&nbsp;&deg;C, so no vapour-compression chiller is needed.</p>
+
+    <figure class="fig">
+      <img src="../assets/diagrams/rig-retrofit.svg" style="width:100%" alt="Cross-section of a decommissioned Spar platform retrofitted for TROIB, showing AI data modules and an OTEC power block on the deck and a 3,000-foot cold-water pipe running down the moonpool to 4 degree Celsius water." />
+      <figcaption>Spar-platform retrofit cross-section. The deck carries the OTEC power block and liquid-cooled AI compute modules; a 915&nbsp;m composite cold-water pipe descends through the moonpool to the 4&nbsp;&deg;C reservoir, supplying both the OTEC condenser and the direct-to-chip cooling loop. The facility is off-grid; surplus power is exported as green hydrogen/ammonia.</figcaption>
+    </figure>
+
+    <!-- ===================== 3 ===================== -->
+    <h2 class="sec">PUE and the Seawater Advantage</h2>
+    <p>Power Usage Effectiveness is the industry metric for data-center energy overhead:</p>
+
+    <div class="eq">
+      <span class="expr">PUE = E<sub>total facility</sub> / E<sub>IT</sub></span>
+      <span class="num"></span>
+    </div>
+
+    <p>A PUE of 1.0 is the theoretical ideal in which every joule entering the facility reaches the compute silicon. In a conventional air-cooled cloud data center, mechanical chillers, computer-room air handlers, and humidity control push PUE to 1.4&ndash;1.6 &mdash; meaning 40&ndash;60&nbsp;% of energy is spent <em>not</em> computing. The single largest contributor to that overhead is the refrigeration plant that lifts heat from a warm data hall to an even warmer outdoor environment.</p>
+    <p>The TROIB platform inverts this thermodynamic problem. The heat sink is not 35&nbsp;&deg;C summer air but 4&nbsp;&deg;C abyssal seawater. Heat flows <em>spontaneously</em> from the &asymp;45&ndash;60&nbsp;&deg;C chip coolant down to the cold sea, so the only cooling parasitic is the pumping energy to circulate seawater and coolant &mdash; there is no compressor lifting heat against a gradient. This collapses cooling overhead and yields a design-target <strong>PUE of 1.02&ndash;1.05</strong>. The companion benefit is that warm-rich coolant return temperatures permit high seawater &Delta;T, reducing required pumped volume.</p>
+
+    <div class="specs">
+      <div class="spec"><div class="v">1.02&ndash;1.05</div><div class="k">Target facility PUE</div></div>
+      <div class="spec"><div class="v">4<small>&nbsp;&deg;C</small></div><div class="k">Seawater cold sink</div></div>
+      <div class="spec"><div class="v">~40<small>&nbsp;%</small></div><div class="k">Structural CapEx avoided</div></div>
+      <div class="spec"><div class="v">~3,500</div><div class="k">Racks cooled &middot; Year 3</div></div>
+    </div>
+
+    <!-- ===================== 4 ===================== -->
+    <h2 class="sec">Heat-Rejection Mass Balance</h2>
+    <p>Sizing the seawater cooling system is a steady-state energy balance: the seawater mass flow must carry away the full IT heat load at the allowable temperature rise. From Q&nbsp;=&nbsp;m&#775;&middot;c<sub>p</sub>&middot;&Delta;T, the required cold-seawater mass flow is:</p>
+
+    <div class="eq">
+      <span class="expr">m&#775; = Q / (c<sub>p</sub> &middot; &Delta;T)</span>
+      <span class="num"></span>
+    </div>
+
+    <p>where Q is the heat load to reject (kW), c<sub>p</sub> is the specific heat of seawater (&asymp;3.99&nbsp;kJ/kg&middot;K), and &Delta;T is the seawater temperature rise across the heat exchanger. Essentially all electrical power delivered to the silicon becomes heat, so Q&nbsp;&asymp;&nbsp;IT load.</p>
+
+    <h3 class="sub">Worked example &mdash; one rack</h3>
+    <p>Take a dense AI training rack dissipating Q&nbsp;=&nbsp;<span class="tok">40&nbsp;kW</span> and allow the seawater to warm by &Delta;T&nbsp;=&nbsp;<span class="tok">8&nbsp;K</span> (from 4&nbsp;&deg;C to 12&nbsp;&deg;C):</p>
+
+    <div class="eq">
+      <span class="expr">m&#775; = 40 / (3.99 &times; 8) = 40 / 31.9 &asymp; <strong>1.25&nbsp;kg/s</strong></span>
+      <span class="num"></span>
+    </div>
+
+    <p>So roughly 1.25&nbsp;kg/s (&asymp;1.2&nbsp;L/s) of seawater rejects a full 40&nbsp;kW rack. Scaling to the Year-3 target of &asymp;3,500 racks at this density gives an aggregate IT load near 140&nbsp;MW<sub>th</sub> and a cooling seawater demand on the order of 4,400&nbsp;kg/s &mdash; well within the flow already drawn through the CWP for the OTEC condenser, so the cooling and power loops share the same cold-water infrastructure. Table&nbsp;1 tabulates the heat-rejection scaling.</p>
+
+    <div class="tbl-wrap">
+      <table class="data">
+        <caption>Illustrative seawater heat-rejection scaling (c<sub>p</sub> = 3.99 kJ/kg&middot;K, &Delta;T = 8 K).</caption>
+        <thead>
+          <tr><th>Aggregation</th><th>Racks</th><th>Heat load Q</th><th>Seawater m&#775;</th><th>Volumetric flow</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Single rack</td><td class="num">1</td><td class="num">40 kW</td><td class="num">1.25 kg/s</td><td class="num">~1.2 L/s</td></tr>
+          <tr><td>One module (250 racks)</td><td class="num">250</td><td class="num">10 MW</td><td class="num">314 kg/s</td><td class="num">~0.31 m&sup3;/s</td></tr>
+          <tr><td>Year-3 platform</td><td class="num">~3,500</td><td class="num">140 MW</td><td class="num">~4,400 kg/s</td><td class="num">~4.3 m&sup3;/s</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===================== 5 ===================== -->
+    <h2 class="sec">Off-Grid Operation and Energy Export</h2>
+    <p>The platform is an energy island. OTEC net power feeds the compute load and balance-of-plant directly; there is no subsea export cable in the Gulf compute zone and therefore no interconnection-queue dependency &mdash; a decisive advantage given that grid interconnection is now the rate-limiting step for AI buildout onshore. When training demand is below available generation, surplus power drives on-board electrolysis, producing green hydrogen that is synthesized to ammonia (NH<sub>3</sub>) for tanker export. Ammonia doubles as the OTEC working fluid and as a shippable energy carrier, simplifying on-board chemical logistics.</p>
+    <p>This load-following behaviour &mdash; compute when demanded, molecules when not &mdash; keeps the OTEC plant near its design point continuously, maximizing capacity factor and smoothing the economics of the high-capital power block.</p>
+
+    <!-- ===================== NOMENCLATURE ===================== -->
+    <h2 class="sec">Nomenclature</h2>
+    <table class="nomen">
+      <tr><th>PUE</th><td>Power Usage Effectiveness (dimensionless)</td></tr>
+      <tr><th>E<sub>total</sub></th><td>Total facility energy (kWh)</td></tr>
+      <tr><th>E<sub>IT</sub></th><td>Energy delivered to compute hardware (kWh)</td></tr>
+      <tr><th>Q</th><td>Heat load to reject (kW)</td></tr>
+      <tr><th>m&#775;</th><td>Cooling seawater mass-flow rate (kg/s)</td></tr>
+      <tr><th>c<sub>p</sub></th><td>Specific heat of seawater (&asymp;3.99 kJ/kg&middot;K)</td></tr>
+      <tr><th>&Delta;T</th><td>Seawater temperature rise across exchanger (K)</td></tr>
+      <tr><th>CWP</th><td>Cold-water pipe (915 m / 3,000 ft)</td></tr>
+      <tr><th>TLP</th><td>Tension-Leg Platform</td></tr>
+      <tr><th>OTEC</th><td>Ocean Thermal Energy Conversion</td></tr>
+    </table>
+
+    <!-- ===================== REFERENCES ===================== -->
+    <h2 class="sec">Selected References (illustrative)</h2>
+    <ol class="refs">
+      <li>Bureau of Safety and Environmental Enforcement. <em>Rigs-to-Reefs Policy and Decommissioning Framework, Gulf of Mexico OCS Region.</em> Conceptual reference, illustrative.</li>
+      <li>The Green Grid. <em>PUE: A Comprehensive Examination of the Metric.</em> Illustrative bibliographic entry.</li>
+      <li>ASHRAE Technical Committee 9.9. <em>Liquid Cooling Guidelines for Datacom Equipment Centers.</em> Illustrative bibliographic entry.</li>
+      <li>U.S. Department of Energy. <em>Direct-to-Chip and Immersion Cooling for High-Density AI Compute.</em> Conceptual reference, illustrative.</li>
+      <li>TROIB Project. <em>Engineering Brief TROIB-EB-01: Closed-Cycle Ammonia OTEC.</em> Companion document.</li>
+    </ol>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="doc-footer">
+      <div class="brand">&copy; 2026 TROIB &middot; troip.xyz</div>
+      <p class="fine">Conceptual engineering brief. Figures, performance estimates, and projections are illustrative and forward-looking; they describe a proposed system architecture and do not represent built, measured, or independently verified results.</p>
+      <span class="print-footnote">TROIB-EB-02 &middot; AI Compute on Decommissioned Platforms &middot; Conceptual / Illustrative &middot; &copy; 2026 troip.xyz</span>
+    </footer>
+
+  </article>
+</body>
+</html>

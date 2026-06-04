@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" role="img" aria-label="Vacuum-flash desalination and Zero Liquid Discharge train: seawater is flashed to vapor under low pressure to make freshwater, and the concentrated brine is crystallized into salt, magnesium, and battery minerals with no marine discharge.">
+  <defs>
+    <linearGradient id="zl-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a2238"/><stop offset="1" stop-color="#03101c"/></linearGradient>
+    <marker id="zl-c" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#00e0c7"/></marker>
+    <marker id="zl-b" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff7a45"/></marker>
+    <marker id="zl-g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ffd166"/></marker>
+    <style>
+      .l{font-family:'Space Mono',ui-monospace,monospace;fill:#c9d8de;font-size:14px}
+      .s{font-family:'Space Mono',ui-monospace,monospace;fill:#7e96a4;font-size:11.5px}
+      .t{font-family:'Space Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.06em}
+      .bx{fill:#0e2c45;stroke:#00e0c7;stroke-opacity:.5;stroke-width:1.5}
+      .prod{fill:#0e2c45;stroke:#ffd166;stroke-width:1.5}
+    </style>
+  </defs>
+  <rect width="1000" height="560" rx="16" fill="url(#zl-bg)"/>
+  <text x="24" y="36" class="t" fill="#00e0c7">INPUT: SEAWATER + DEEP-SEA MINERAL MATRIX</text>
+
+  <!-- seawater intake -->
+  <path d="M40,120 H150" stroke="#00e0c7" stroke-width="4" fill="none" marker-end="url(#zl-c)"/>
+  <text x="40" y="108" class="s">seawater feed</text>
+
+  <!-- Vacuum flash chamber -->
+  <rect class="bx" x="150" y="80" width="180" height="90" rx="10"/>
+  <text x="240" y="116" class="l" text-anchor="middle">VACUUM-FLASH</text>
+  <text x="240" y="136" class="l" text-anchor="middle">CHAMBER</text>
+  <text x="240" y="156" class="s" text-anchor="middle">low-P · boils at ambient T</text>
+
+  <!-- vapor -> condenser -> freshwater -->
+  <path d="M240,80 V44 H470" stroke="#2ad4ff" stroke-width="3" fill="none" stroke-dasharray="2 6" marker-end="url(#zl-c)"/>
+  <text x="300" y="66" class="s" fill="#2ad4ff">water vapor</text>
+  <rect class="bx" x="470" y="24" width="150" height="48" stroke="#2ad4ff"/>
+  <text x="545" y="53" class="l" text-anchor="middle">CONDENSER</text>
+  <path d="M620,48 H760" stroke="#00e0c7" stroke-width="4" fill="none" marker-end="url(#zl-c)"/>
+  <rect class="prod" x="760" y="24" width="200" height="48" stroke="#00e0c7"/>
+  <text x="860" y="46" class="l" text-anchor="middle" fill="#00e0c7">POTABLE WATER</text>
+  <text x="860" y="63" class="s" text-anchor="middle">up to 120 MGD · ¼ RO energy</text>
+
+  <!-- brine down to ZLD crystallizer -->
+  <path d="M240,170 V250" stroke="#ff7a45" stroke-width="4" fill="none" marker-end="url(#zl-b)"/>
+  <text x="252" y="216" class="s" fill="#ff7a45">concentrated brine</text>
+  <rect class="bx" x="120" y="250" width="240" height="90" rx="10" stroke="#ff7a45"/>
+  <text x="240" y="286" class="l" text-anchor="middle">ZLD FRACTIONAL</text>
+  <text x="240" y="306" class="l" text-anchor="middle">CRYSTALLIZER</text>
+  <text x="240" y="326" class="s" text-anchor="middle">staged evaporation · zero discharge</text>
+
+  <!-- product fan-out -->
+  <path d="M360,295 H440" stroke="#ffd166" stroke-width="3" fill="none" marker-end="url(#zl-g)"/>
+  <g>
+    <rect class="prod" x="440" y="150" width="210" height="52"/>
+    <text x="455" y="178" class="l">NaCl</text><text x="510" y="173" class="s">industrial &amp; culinary salt</text><text x="510" y="191" class="s">1.4 M t/yr</text>
+
+    <rect class="prod" x="440" y="262" width="210" height="52"/>
+    <text x="455" y="290" class="l">MgCl₂</text><text x="515" y="285" class="s">magnesium · alloys/batteries</text><text x="515" y="303" class="s">68,000 t/yr</text>
+
+    <rect class="prod" x="440" y="374" width="210" height="52"/>
+    <text x="455" y="396" class="l">Li₂CO₃·KCl</text><text x="455" y="416" class="s">battery/agri · 950 t/yr</text>
+  </g>
+  <!-- collector bus: all three mineral products feed the offtake -->
+  <path d="M650,176 H700" stroke="#ffd166" stroke-width="2" fill="none" opacity=".45"/>
+  <path d="M650,288 H700" stroke="#ffd166" stroke-width="2" fill="none" opacity=".45"/>
+  <path d="M650,400 H700" stroke="#ffd166" stroke-width="2" fill="none" opacity=".45"/>
+  <path d="M700,176 V400" stroke="#ffd166" stroke-width="2" fill="none" opacity=".45"/>
+  <path d="M700,300 H750" stroke="#ffd166" stroke-width="2.5" fill="none" marker-end="url(#zl-g)"/>
+  <rect class="prod" x="750" y="274" width="210" height="52" stroke="#ffd166"/>
+  <text x="855" y="300" class="l" text-anchor="middle" fill="#ffd166">COMMODITY OFFTAKE</text>
+  <text x="855" y="317" class="s" text-anchor="middle">market-rate mineral portfolio</text>
+
+  <text x="500" y="540" class="t" fill="#8fa6b2" text-anchor="middle">ZERO LIQUID DISCHARGE — NO TOXIC BRINE TO THE OCEAN · CIRCULAR MINERAL ECONOMY</text>
+</svg>

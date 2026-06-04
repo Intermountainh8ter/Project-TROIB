@@ -563,3 +563,117 @@ main, .footer { position: relative; z-index: 2; }
   .nav__burger.is-open span:nth-child(2){ opacity: 0; }
   .nav__burger.is-open span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
 }
+
+/* =========================================================
+   PHOTOGRAPHY, IMAGE BANDS, SCHEMATICS & TECHNICAL LIBRARY
+   ========================================================= */
+
+/* ---- hero background photo (rig at night) ---- */
+.hero { position: relative; isolation: isolate; }
+.hero__bg { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
+.hero__bg img { width: 100%; height: 100%; object-fit: cover; object-position: 70% 40%; opacity: .6; }
+.hero__bg::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, var(--abyss) 6%, rgba(4,17,31,.6) 52%, rgba(4,17,31,.15) 100%),
+    linear-gradient(180deg, rgba(4,17,31,.65) 0%, transparent 32%, var(--abyss) 97%);
+}
+
+/* ---- region panel photos ---- */
+.region-panel__art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.region-panel__art::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, rgba(4,17,31,.04) 40%, rgba(4,17,31,.6));
+}
+.region-panel__art .art-tag {
+  position: absolute; left: 14px; bottom: 12px; z-index: 2;
+  font-family: var(--font-mono); font-size: .68rem; letter-spacing: .06em; color: #eaf4f4;
+  background: rgba(2,8,15,.62); border: 1px solid var(--line); padding: .32rem .6rem; border-radius: 7px;
+  backdrop-filter: blur(4px);
+}
+
+/* ---- full-bleed image bands (dividers) ---- */
+.imgband { position: relative; min-height: clamp(300px, 46vh, 480px); display: flex; align-items: center; overflow: hidden; }
+.imgband img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.imgband::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(3,13,24,.9) 0%, rgba(3,13,24,.5) 55%, rgba(3,13,24,.2) 100%);
+}
+.imgband--center::after { background: linear-gradient(180deg, rgba(3,13,24,.78), rgba(3,13,24,.55)); }
+.imgband__inner { position: relative; z-index: 2; max-width: var(--maxw); width: 100%; margin: 0 auto; padding: 2rem clamp(1.25rem, 5vw, 2.5rem); }
+.imgband__kicker { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .26em; text-transform: uppercase; color: var(--teal); }
+.imgband__title { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.6rem, 4vw, 3rem); line-height: 1.06; margin-top: .8rem; max-width: 20ch;
+  background-image: linear-gradient(176deg,#fff 0%,#e4e9f0 22%,#b3bcca 44%,#828c9b 52%,#aab3c1 62%,#e8edf3 82%,#fff 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,.5)); }
+.imgband__sub { color: #cfe0e6; max-width: 52ch; margin-top: .9rem; font-size: 1.05rem; }
+
+/* ---- schematics grid ---- */
+.schem-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.figure { background: var(--abyss-2); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; transition: .35s var(--ease); }
+.figure:hover { border-color: var(--line-bright); transform: translateY(-4px); }
+.figure__media { background: #04111f; padding: .6rem; }
+.figure__media img { width: 100%; display: block; border-radius: 10px; }
+.figure figcaption { padding: 1rem 1.3rem 1.4rem; }
+.figure__tag { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .12em; color: var(--teal); }
+.figure h3 { font-family: var(--font-display); font-size: 1.05rem; margin: .35rem 0 .4rem; }
+.figure p { color: var(--muted); font-size: .9rem; }
+
+/* ---- technical library (white papers) ---- */
+.lib-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+.paper-card { display: flex; gap: 1.1rem; align-items: flex-start; padding: 1.6rem; border: 1px solid var(--line); border-radius: 16px; background: var(--abyss-2); transition: .3s var(--ease); }
+.paper-card:hover { border-color: var(--line-bright); transform: translateY(-4px); box-shadow: var(--shadow); }
+.paper-card__doc { flex: none; font-family: var(--font-mono); font-size: .64rem; color: var(--gold); border: 1px solid var(--line); border-radius: 9px; padding: .55rem .55rem; text-align: center; line-height: 1.5; }
+.paper-card h3 { font-family: var(--font-display); font-size: 1.06rem; line-height: 1.2; }
+.paper-card p { color: var(--muted); font-size: .9rem; margin-top: .4rem; }
+.paper-card__meta { font-family: var(--font-mono); font-size: .68rem; color: var(--faint); margin-top: .6rem; display: inline-flex; gap: .5rem; align-items: center; }
+.paper-card__arrow { color: var(--teal); transition: transform .3s var(--ease); }
+.paper-card:hover .paper-card__arrow { transform: translateX(4px); }
+
+.credits { font-family: var(--font-mono); font-size: .68rem; color: var(--faint); }
+.credits a { color: var(--muted); }
+
+@media (max-width: 920px) {
+  .schem-grid, .lib-grid { grid-template-columns: 1fr; }
+  .imgband__title { max-width: 100%; }
+}
+
+/* =========================================================
+   "TRUE GREEN ENERGY" — EV / dirty-grid ad section
+   ========================================================= */
+.ev-ad { position: relative; overflow: hidden; min-height: clamp(460px, 74vh, 760px); display: flex; align-items: center; }
+.ev-ad__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.ev-ad::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(3,8,15,.5) 0%, rgba(3,8,15,.78) 70%, rgba(4,17,31,.95) 100%),
+    radial-gradient(130% 90% at 18% 25%, rgba(255,72,40,.28), transparent 58%);
+}
+.ev-ad__inner { position: relative; z-index: 2; max-width: var(--maxw); margin: 0 auto; width: 100%;
+  padding: clamp(3.5rem, 8vw, 6rem) clamp(1.25rem, 5vw, 2.5rem); }
+.ev-ad__badge {
+  display: inline-flex; gap: .5rem; align-items: center; font-family: var(--font-mono);
+  font-size: .7rem; letter-spacing: .26em; text-transform: uppercase; color: #ffb199;
+  border: 1px solid rgba(255,122,69,.5); border-radius: 100px; padding: .42rem .95rem;
+  background: rgba(255,72,40,.08);
+}
+.ev-ad__head {
+  font-family: var(--font-display); font-weight: 800; color: #fff;
+  font-size: clamp(2rem, 5.2vw, 4rem); line-height: 1.02; letter-spacing: -.01em;
+  margin: 1.3rem 0; max-width: 19ch; text-shadow: 0 4px 30px rgba(0,0,0,.5);
+}
+.ev-ad__head .hot { color: var(--coral); }
+.ev-ad__body { color: #e4ecef; max-width: 58ch; font-size: clamp(1.02rem, 1.7vw, 1.22rem); }
+.ev-ad__body strong { color: #fff; }
+.ev-ad__rule { height: 2px; width: min(520px, 80%); margin: 2rem 0 1.6rem;
+  background: linear-gradient(90deg, var(--teal), transparent); }
+.ev-ad__answer {
+  font-family: var(--font-display); font-weight: 700; color: var(--text);
+  font-size: clamp(1.15rem, 2.3vw, 1.7rem); line-height: 1.18; max-width: 30ch;
+}
+.ev-ad__answer b { font-weight: 800; background: var(--grad-cold);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.ev-ad__stamp { margin-top: 1.7rem; display: inline-flex; align-items: center; gap: .65rem;
+  font-family: var(--font-mono); font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; color: var(--teal); }
+.ev-ad__stamp .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 12px var(--teal); }
+.ev-ad__disclaim { margin-top: 1.6rem; font-family: var(--font-mono); font-size: .68rem; color: var(--faint); max-width: 64ch; }

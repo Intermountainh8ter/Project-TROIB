@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sea Water Air Conditioning for Coastal Loads — TROIB Engineering Brief</title>
+  <meta name="description" content="Florida OTEC plantships supplying post-turbine cold water to a mainland SWAC district cooling loop for downtown Miami data and urban loads, replacing mechanical chillers. Conceptual engineering brief." />
+  <meta name="theme-color" content="#04111f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="paper.css" />
+</head>
+<body>
+  <div class="bg-nothing" aria-hidden="true"></div>
+  <a class="paper-nav" href="../index.html">&larr; Back to TROIB</a>
+  <button class="print-btn" onclick="window.print()">&#9113; Print / Save as PDF</button>
+
+  <article class="doc">
+
+    <!-- ===================== COVER ===================== -->
+    <header class="cover">
+      <p class="eyebrow">TROIB &middot; Engineering Brief</p>
+      <h1 class="title">Sea Water Air Conditioning for Coastal Data &amp; Urban Loads</h1>
+      <p class="subtitle">Florida OTEC plantships moored in the Gulf Stream export power to the grid and pipe post-turbine cold water ashore to a SWAC district loop &mdash; cooling downtown Miami carrier hotels, edge data centers, and high-rises at a fraction of mechanical-chiller energy.</p>
+      <div class="meta-row">
+        <span><b>Document No.</b> TROIB-EB-03</span>
+        <span><b>Revision</b> A</span>
+        <span><b>Classification:</b> Conceptual / Illustrative</span>
+        <span><b>Date:</b> 2026</span>
+      </div>
+    </header>
+
+    <!-- ===================== DISCLAIMER ===================== -->
+    <aside class="disclaimer">
+      <strong>Conceptual Engineering Brief</strong>
+      Figures, performance estimates, and projections are illustrative and forward-looking; they describe a proposed system architecture and do not represent built, measured, or independently verified results.
+    </aside>
+
+    <!-- ===================== ABSTRACT ===================== -->
+    <section class="abstract">
+      <h2>Abstract</h2>
+      <p>Sea Water Air Conditioning (SWAC) uses naturally cold deep seawater as the chilled-water source for a district cooling network, displacing the electrically intensive vapour-compression chillers that dominate building energy in hot, humid coastal cities. In the TROIB Southeast Florida zone, utility OTEC plantships are moored 3&ndash;5&nbsp;mi offshore in the Gulf Stream; they export firm power to the FPL grid through a high-voltage subsea cable, and their <em>post-turbine</em> cold water (already drawn from depth and warmed only to &asymp;7&ndash;10&nbsp;&deg;C) is piped to a mainland SWAC district loop serving downtown Miami carrier hotels, edge data centers, and high-rise HVAC. Because SWAC replaces compressor work with pumping work, cooling energy intensity falls from &asymp;0.6&ndash;0.9&nbsp;kW/ton for conventional chillers to &asymp;0.1&ndash;0.2&nbsp;kW/ton. This brief presents the loop heat-exchange basis, the tons-of-refrigeration accounting, and the district load-growth trajectory to a Year-10 offset of &asymp;250&nbsp;MW of urban cooling alongside 600&nbsp;MW of direct-to-grid power.</p>
+    </section>
+
+    <!-- ===================== 1 ===================== -->
+    <h2 class="sec">Plantship and Grid Architecture</h2>
+    <p>The Florida zone uses purpose-moored OTEC plantships rather than re-used rigs. Stationed 3&ndash;5&nbsp;mi offshore over the Florida Straits, each plantship sits in the Gulf Stream where warm surface water is reliably &asymp;25&nbsp;&deg;C and a cold-water pipe reaches &asymp;4&nbsp;&deg;C deep water. Two products leave the plantship: <strong>electricity</strong>, exported through a high-voltage subsea cable to a Florida Power &amp; Light (FPL) shore station, and <strong>cold water</strong>, whose remaining thermal capacity is harvested ashore for district cooling rather than discharged.</p>
+    <p>This dual-use is the efficiency multiplier of the Florida zone. The cold seawater has already been pumped from depth &mdash; the dominant OTEC parasitic &mdash; so using its residual chill for air conditioning is nearly free incremental value. After passing the OTEC condenser the water has warmed only to roughly 7&ndash;10&nbsp;&deg;C, still far colder than any chilled-water loop a mechanical plant would produce.</p>
+
+    <!-- ===================== 2 ===================== -->
+    <h2 class="sec">The SWAC District Loop</h2>
+    <p>Cold seawater is never circulated through customer buildings directly &mdash; corrosion and biofouling forbid it. Instead, a shoreside <strong>titanium plate heat exchanger</strong> transfers cold from the seawater stream to a closed freshwater district loop. That district loop distributes chilled water through insulated mains to building cooling stations, where a second heat exchanger serves the in-building HVAC. The seawater, now warmed, is returned to a benign mixing depth offshore.</p>
+
+    <figure class="fig">
+      <img src="../assets/diagrams/swac-loop.svg" style="width:100%" alt="Florida sea water air conditioning loop schematic showing an offshore OTEC plantship, a subsea cold-water and power route to shore, a shoreside heat exchanger, and a district chilled-water loop serving downtown Miami buildings." />
+      <figcaption>Florida SWAC district-cooling loop. An offshore OTEC plantship exports power via HV subsea cable and sends post-turbine cold water (&asymp;7&ndash;10&nbsp;&deg;C) ashore. A titanium plate heat exchanger couples the seawater to a closed freshwater district loop that cools downtown Miami carrier hotels, edge data centers, and high-rises, replacing mechanical chillers.</figcaption>
+    </figure>
+
+    <!-- ===================== 3 ===================== -->
+    <h2 class="sec">Energy: Compressors vs Pumps</h2>
+    <p>A conventional building chiller runs a vapour-compression cycle: a compressor lifts heat from chilled water up to a hot outdoor condenser. That compressor is the energy cost, conventionally expressed in kilowatts of electricity per <strong>ton of refrigeration</strong> (1 ton&nbsp;=&nbsp;3.517&nbsp;kW of cooling). Efficient water-cooled chillers run &asymp;0.6&nbsp;kW/ton; older or air-cooled units reach 0.9&nbsp;kW/ton or worse.</p>
+    <p>SWAC has <em>no compressor</em>. The cold already exists in the deep sea; the only electrical cost is pumping seawater and circulating the district loop &mdash; on the order of <strong>0.1&ndash;0.2&nbsp;kW/ton</strong>. The energy reduction is therefore roughly 4&ndash;8&times;, as summarized in Table&nbsp;1.</p>
+
+    <div class="tbl-wrap">
+      <table class="data">
+        <caption>Illustrative cooling energy intensity: conventional chillers vs SWAC.</caption>
+        <thead>
+          <tr><th>System</th><th>Mechanism</th><th>Energy intensity</th><th>Relative</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Air-cooled chiller</td><td>Vapour compression</td><td class="num">~0.9 kW/ton</td><td class="num">1.0&times;</td></tr>
+          <tr><td>Water-cooled chiller</td><td>Vapour compression</td><td class="num">~0.6 kW/ton</td><td class="num">0.67&times;</td></tr>
+          <tr><td>TROIB SWAC loop</td><td>Pumping only</td><td class="num">~0.1&ndash;0.2 kW/ton</td><td class="num">0.11&ndash;0.22&times;</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="specs">
+      <div class="spec"><div class="v">3.517<small>&nbsp;kW</small></div><div class="k">1 ton of refrigeration</div></div>
+      <div class="spec"><div class="v">~0.15<small>&nbsp;kW/ton</small></div><div class="k">SWAC pumping intensity</div></div>
+      <div class="spec"><div class="v">250<small>&nbsp;MW</small></div><div class="k">Urban cooling offset &middot; Yr 10</div></div>
+      <div class="spec"><div class="v">600<small>&nbsp;MW</small></div><div class="k">Direct-to-grid power &middot; Yr 10</div></div>
+    </div>
+
+    <!-- ===================== 4 ===================== -->
+    <h2 class="sec">Loop Heat-Exchange Sizing</h2>
+    <p>The cooling capacity a SWAC loop can deliver is fixed by the seawater flow it can move and the temperature rise allowed across the shoreside exchanger:</p>
+
+    <div class="eq">
+      <span class="expr">Q = m&#775; &middot; c<sub>p</sub> &middot; &Delta;T</span>
+      <span class="num"></span>
+    </div>
+
+    <p>where Q is cooling power (kW), m&#775; the seawater mass-flow rate (kg/s), c<sub>p</sub>&nbsp;&asymp;&nbsp;3.99&nbsp;kJ/kg&middot;K, and &Delta;T the seawater temperature rise across the heat exchanger. Converting the result to tons of refrigeration uses Q[tons]&nbsp;=&nbsp;Q[kW]&nbsp;/&nbsp;3.517.</p>
+
+    <h3 class="sub">Worked example &mdash; district main</h3>
+    <p>Suppose the shoreside exchanger draws seawater at m&#775;&nbsp;=&nbsp;<span class="tok">3,000&nbsp;kg/s</span> and the seawater is allowed to warm by &Delta;T&nbsp;=&nbsp;<span class="tok">10&nbsp;K</span> (from &asymp;8&nbsp;&deg;C to 18&nbsp;&deg;C):</p>
+
+    <div class="eq">
+      <span class="expr">Q = 3,000 &times; 3.99 &times; 10 &asymp; 119,700&nbsp;kW &asymp; <strong>120&nbsp;MW<sub>th</sub></strong></span>
+      <span class="num"></span>
+    </div>
+
+    <div class="eq">
+      <span class="expr">Q = 119,700 / 3.517 &asymp; <strong>34,000&nbsp;tons</strong> of refrigeration</span>
+      <span class="num"></span>
+    </div>
+
+    <p>A single district main on the order of 3&nbsp;m<sup>3</sup>/s of cold seawater therefore delivers roughly 120&nbsp;MW of cooling &mdash; enough to serve a substantial cluster of downtown towers and data halls. The avoided compressor energy at &asymp;0.6&nbsp;kW/ton would be near 20&nbsp;MW<sub>e</sub>, which instead remains available as grid export.</p>
+
+    <!-- ===================== 5 ===================== -->
+    <h2 class="sec">District Load Growth</h2>
+    <p>The Florida district cooling offset and direct-to-grid power scale together as plantship capacity and the shoreside distribution network expand. Table&nbsp;2 gives the illustrative trajectory.</p>
+
+    <div class="tbl-wrap">
+      <table class="data">
+        <caption>Illustrative Florida-zone load growth.</caption>
+        <thead>
+          <tr><th>Milestone</th><th>Urban cooling offset</th><th>Direct-to-grid power</th><th>Primary loads served</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Year 3</td><td class="num">~40 MW</td><td class="num">~120 MW</td><td>Anchor carrier hotels, pilot district</td></tr>
+          <tr><td>Year 6</td><td class="num">~130 MW</td><td class="num">~350 MW</td><td>Downtown core, edge data centers</td></tr>
+          <tr><td>Year 10</td><td class="num">~250 MW</td><td class="num">~600 MW</td><td>Full district + high-rise HVAC</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>By replacing roughly 250&nbsp;MW of compressor-based cooling with pumping-only SWAC, the zone removes both the electrical demand and the urban waste-heat rejection of those chillers from a dense, heat-stressed coastal core &mdash; while the 600&nbsp;MW of firm OTEC power feeds the FPL grid as zero-emission baseload.</p>
+
+    <!-- ===================== NOMENCLATURE ===================== -->
+    <h2 class="sec">Nomenclature</h2>
+    <table class="nomen">
+      <tr><th>SWAC</th><td>Sea Water Air Conditioning</td></tr>
+      <tr><th>Q</th><td>Cooling (heat-exchange) power (kW)</td></tr>
+      <tr><th>m&#775;</th><td>Seawater mass-flow rate (kg/s)</td></tr>
+      <tr><th>c<sub>p</sub></th><td>Specific heat of seawater (&asymp;3.99 kJ/kg&middot;K)</td></tr>
+      <tr><th>&Delta;T</th><td>Seawater temperature rise across exchanger (K)</td></tr>
+      <tr><th>ton</th><td>Ton of refrigeration = 3.517 kW of cooling</td></tr>
+      <tr><th>kW/ton</th><td>Electrical energy intensity of cooling</td></tr>
+      <tr><th>HV</th><td>High-voltage (subsea export cable)</td></tr>
+      <tr><th>FPL</th><td>Florida Power &amp; Light (grid offtaker)</td></tr>
+    </table>
+
+    <!-- ===================== REFERENCES ===================== -->
+    <h2 class="sec">Selected References (illustrative)</h2>
+    <ol class="refs">
+      <li>International District Energy Association. <em>District Cooling Best Practice Guide.</em> Illustrative bibliographic entry.</li>
+      <li>Makai Ocean Engineering. <em>Sea Water Air Conditioning: System Design and Pipeline Engineering.</em> Conceptual reference, illustrative.</li>
+      <li>ASHRAE. <em>Handbook &mdash; HVAC Systems and Equipment: District Cooling.</em> Illustrative bibliographic entry.</li>
+      <li>U.S. Department of Energy. <em>Deep-Water Source Cooling for Coastal Urban Districts.</em> Conceptual reference, illustrative.</li>
+      <li>TROIB Project. <em>Engineering Brief TROIB-EB-01: Closed-Cycle Ammonia OTEC.</em> Companion document.</li>
+    </ol>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="doc-footer">
+      <div class="brand">&copy; 2026 TROIB &middot; troip.xyz</div>
+      <p class="fine">Conceptual engineering brief. Figures, performance estimates, and projections are illustrative and forward-looking; they describe a proposed system architecture and do not represent built, measured, or independently verified results.</p>
+      <span class="print-footnote">TROIB-EB-03 &middot; Sea Water Air Conditioning &middot; Conceptual / Illustrative &middot; &copy; 2026 troip.xyz</span>
+    </footer>
+
+  </article>
+</body>
+</html>
