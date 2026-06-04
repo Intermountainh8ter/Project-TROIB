@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TROIB — Tri-Regional Ocean Infrastructure Blueprint</title>
+  <meta name="description" content="TROIB harnesses the ocean's thermal gradient across the Gulf of Mexico, Southeast Florida, and Southern California to power AI data centers, produce freshwater, and mine minerals — a zero-emission, four-revenue utility network." />
+  <meta name="theme-color" content="#04111f" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="canonical" href="https://troip.xyz/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="TROIB — The Tri-Regional Ocean Infrastructure Blueprint" />
+  <meta property="og:description" content="The ocean is the largest solar battery on Earth. TROIB taps its thermal gradient to power AI, make water, and harvest minerals — zero emissions, four revenue streams." />
+  <meta property="og:url" content="https://troip.xyz/" />
+  <meta property="og:site_name" content="TROIB" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Unique type pairing: Syne (display), Space Grotesk (body), Space Mono (data) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Space+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- Scroll progress (depth gauge) -->
+  <div class="depth-gauge" aria-hidden="true">
+    <div class="depth-gauge__fill" id="depthFill"></div>
+    <span class="depth-gauge__label" id="depthLabel">0 m</span>
+  </div>
+
+  <!-- Animated ocean-depth canvas backdrop -->
+  <canvas id="oceanCanvas" class="ocean-canvas" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__brand" aria-label="TROIB home">
+      <svg class="nav__mark" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true">
+        <rect x="27" y="8" width="10" height="48" rx="5" fill="url(#navGrad)"/>
+        <circle cx="16" cy="20" r="5" fill="#ffd166"/>
+        <circle cx="48" cy="32" r="5" fill="#00e0c7"/>
+        <circle cx="16" cy="44" r="5" fill="#2a7bff"/>
+        <defs><linearGradient id="navGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#ff7a45"/><stop offset=".4" stop-color="#ffd166"/>
+          <stop offset=".75" stop-color="#00e0c7"/><stop offset="1" stop-color="#2a7bff"/>
+        </linearGradient></defs>
+      </svg>
+      <span class="nav__name">TROIB</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#crisis">The Thesis</a>
+      <a href="#blueprint">Blueprint</a>
+      <a href="#regions">Regions</a>
+      <a href="#forecast">Forecasts</a>
+      <a href="#financials">Financials</a>
+    </nav>
+    <a href="#invest" class="btn btn--ghost nav__cta">Investor Brief</a>
+    <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero__inner">
+        <p class="eyebrow reveal">Tri-Regional Ocean Infrastructure Blueprint</p>
+        <h1 class="hero__title reveal">
+          The ocean is the largest
+          <span class="grad-text">solar battery</span>
+          on Earth.<br/>We built the plug.
+        </h1>
+        <p class="hero__sub reveal">
+          TROIB harnesses the thermal, chemical, and physical energy of the deep sea
+          across three U.S. maritime zones — turning a 20&nbsp;°C temperature gradient into
+          <strong>baseload power, AI cooling, freshwater, and critical minerals.</strong>
+          Zero emissions. Four revenue streams. One blueprint.
+        </p>
+        <div class="hero__actions reveal">
+          <a href="#invest" class="btn btn--solid">Request the Investor Brief</a>
+          <a href="#blueprint" class="btn btn--ghost">Explore the System ↓</a>
+        </div>
+
+        <ul class="hero__ticker reveal" aria-label="Key 10-year targets">
+          <li><span class="counter" data-to="1354.6" data-pre="$" data-suf="M" data-dec="1">$0M</span><em>Gross revenue · Yr 10</em></li>
+          <li><span class="counter" data-to="1100" data-suf=" MW" data-dec="0">0 MW</span><em>Clean power · Yr 10</em></li>
+          <li><span class="counter" data-to="120" data-suf=" MGD" data-dec="0">0 MGD</span><em>Freshwater · Yr 10</em></li>
+          <li><span class="counter" data-to="1.05" data-pre="PUE " data-dec="2">PUE 0</span><em>Data-center efficiency</em></li>
+        </ul>
+      </div>
+      <a href="#crisis" class="hero__scroll" aria-label="Scroll down">
+        <span>Descend</span>
+        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 4v16M6 14l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </section>
+
+    <!-- ============ CRISIS / THESIS ============ -->
+    <section class="section" id="crisis">
+      <div class="section__head reveal">
+        <span class="kicker">01 — The Thesis</span>
+        <h2 class="section__title">Three crises are colliding.<br/>One resource resolves all three.</h2>
+        <p class="section__lead">America's grid is being asked to power an AI buildout, cool it, and quench
+          a deepening water crisis — all at once. The deep ocean is the only resource that answers every demand simultaneously.</p>
+      </div>
+      <div class="crisis-grid">
+        <article class="crisis-card reveal">
+          <div class="crisis-card__num">01</div>
+          <h3>AI's insatiable load</h3>
+          <p>Hyperscale training clusters are outrunning grid interconnection queues. They need <strong>baseload power and relentless cooling</strong> — not intermittent renewables.</p>
+        </article>
+        <article class="crisis-card reveal">
+          <div class="crisis-card__num">02</div>
+          <h3>Freshwater scarcity</h3>
+          <p>The Sun Belt is drying. Traditional desalination is energy-hungry and dumps toxic brine. Coastal cities need <strong>scalable, low-energy freshwater</strong>.</p>
+        </article>
+        <article class="crisis-card reveal">
+          <div class="crisis-card__num">03</div>
+          <h3>Clean baseload gap</h3>
+          <p>Carbon mandates demand 24/7 zero-emission power. Solar and wind can't deliver firm capacity. The grid needs a <strong>round-the-clock clean engine</strong>.</p>
+        </article>
+      </div>
+      <div class="thesis-bridge reveal">
+        <div class="thesis-bridge__line"></div>
+        <p>The deep sea sits at a constant <strong>4&nbsp;°C</strong>. The surface bakes at <strong>24&nbsp;°C+</strong>.
+          That 20-degree gradient is a perpetual, planet-scale battery. TROIB converts it into electricity, cooling, water, and minerals — at once.</p>
+      </div>
+    </section>
+
+    <!-- ============ BLUEPRINT / SYSTEM FLOW ============ -->
+    <section class="section section--flow" id="blueprint">
+      <div class="section__head reveal">
+        <span class="kicker">02 — The Blueprint</span>
+        <h2 class="section__title">One system. Three coasts. Four outputs.</h2>
+        <p class="section__lead">TROIB deploys Ocean Thermal Energy Conversion (OTEC), Deep Sea Water Utilization (DSWU),
+          and vacuum-flash desalination — each region tuned to its own oceanography.</p>
+      </div>
+
+      <div class="flow reveal">
+        <div class="flow__source">
+          <span class="flow__pill">SYSTEM INPUT</span>
+          <h3>The Deep-Sea Thermal Gradient</h3>
+          <p>3,000&nbsp;ft cold-water pipes draw 4&nbsp;°C abyssal water to the surface.</p>
+        </div>
+        <div class="flow__split" aria-hidden="true"></div>
+        <div class="flow__branches">
+          <article class="flow__branch flow__branch--a">
+            <span class="flow__zone">GULF OF MEXICO</span>
+            <h4>Offshore AI &amp; Clean Fuel</h4>
+            <ul>
+              <li>Rig-based co-located AI</li>
+              <li>Green hydrogen / ammonia</li>
+              <li>100% off-grid</li>
+            </ul>
+          </article>
+          <article class="flow__branch flow__branch--b">
+            <span class="flow__zone">SOUTHEAST FLORIDA</span>
+            <h4>Grid &amp; Urban Cooling</h4>
+            <ul>
+              <li>Utility-scale plantships</li>
+              <li>Mainland grid injection</li>
+              <li>District SWAC loop</li>
+            </ul>
+          </article>
+          <article class="flow__branch flow__branch--c">
+            <span class="flow__zone">SOUTHERN CALIFORNIA</span>
+            <h4>Water &amp; Mineral Sanctuary</h4>
+            <ul>
+              <li>Shore-based DSWU</li>
+              <li>Ultra-low-energy desal</li>
+              <li>Aquaculture &amp; agri-grids</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ REGIONS ============ -->
+    <section class="section" id="regions">
+      <div class="section__head reveal">
+        <span class="kicker">03 — Regional Deployment</span>
+        <h2 class="section__title">Three engines, engineered for their waters.</h2>
+      </div>
+
+      <div class="region-tabs reveal" role="tablist" aria-label="Regions">
+        <button class="region-tab is-active" role="tab" aria-selected="true" data-region="gulf">
+          <span class="region-tab__tag">A</span> Gulf of Mexico
+        </button>
+        <button class="region-tab" role="tab" aria-selected="false" data-region="florida">
+          <span class="region-tab__tag">B</span> Southeast Florida
+        </button>
+        <button class="region-tab" role="tab" aria-selected="false" data-region="cali">
+          <span class="region-tab__tag">C</span> Southern California
+        </button>
+      </div>
+
+      <div class="region-panels">
+        <!-- GULF -->
+        <article class="region-panel is-active" data-region="gulf">
+          <div class="region-panel__body">
+            <h3>The Offshore AI &amp; Clean-Fuel Engine</h3>
+            <p class="region-panel__strap">Mississippi Canyon &amp; Alaminos Canyon — Spar &amp; Tension-Leg Platforms</p>
+            <p>We intercept late-life and decommissioned deepwater rigs slated for multi-million-dollar
+              removal, then retrofit their hollow moonpools to house 3,000-ft vertical composite cold-water pipes.
+              Closed-cycle ammonia OTEC blocks generate continuous baseload power.</p>
+            <p>Instead of wheeling power to shore, ruggedized liquid-cooled <strong>AI training modules
+              sit directly on the rig decks</strong>. 4&nbsp;°C deep-sea water delivers direct-to-chip immersion cooling;
+              excess power becomes transportable green hydrogen and ammonia.</p>
+            <div class="region-panel__stats">
+              <div><b>500 MW</b><span>Gross power · Yr 10 (10-rig cluster)</span></div>
+              <div><b>~3,500</b><span>AI racks cooled · Yr 3</span></div>
+              <div><b>−40%</b><span>CapEx via Rigs-to-Reefs</span></div>
+            </div>
+          </div>
+          <div class="region-panel__art region-art--gulf" aria-hidden="true">
+            <div class="rig">
+              <div class="rig__deck"><span class="rig__server"></span><span class="rig__server"></span><span class="rig__server"></span></div>
+              <div class="rig__leg"></div>
+              <div class="rig__pipe"><span></span></div>
+              <div class="rig__cold">4&nbsp;°C</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- FLORIDA -->
+        <article class="region-panel" data-region="florida">
+          <div class="region-panel__body">
+            <h3>The Municipal Grid &amp; Urban Cooling Hub</h3>
+            <p class="region-panel__strap">Miami · Fort Lauderdale · Florida Keys — tapping the Gulf Stream</p>
+            <p>Commercial multi-megawatt floating OTEC plantships moor 3–5 miles offshore, tapping the
+              powerful thermal gradient of the Gulf Stream. High-voltage subsea cables inject baseload
+              electricity directly into the Florida Power &amp; Light grid.</p>
+            <p>Post-turbine cold water (7–10&nbsp;°C) feeds a mainland <strong>Sea Water Air Conditioning (SWAC)</strong>
+              district loop through downtown Miami's carrier hotels, edge data centers, and high-rises —
+              retiring electricity-hogging mechanical chillers entirely.</p>
+            <div class="region-panel__stats">
+              <div><b>600 MW</b><span>Direct-to-grid · Yr 10</span></div>
+              <div><b>250 MW</b><span>Urban cooling offset · Yr 10</span></div>
+              <div><b>PUE 1.02</b><span>For SWAC-connected tenants</span></div>
+            </div>
+          </div>
+          <div class="region-panel__art region-art--florida" aria-hidden="true">
+            <div class="city">
+              <span class="city__tower"></span><span class="city__tower"></span>
+              <span class="city__tower"></span><span class="city__tower"></span>
+              <div class="city__loop"></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- CALI -->
+        <article class="region-panel" data-region="cali">
+          <div class="region-panel__body">
+            <h3>The Eco-Industrial &amp; Mineral Sanctuary</h3>
+            <p class="region-panel__strap">La Jolla &amp; Redondo Canyons — a fractional, non-power OTEC asset</p>
+            <p>Shore-based DSWU facilities sit beside deep submarine canyons. Lacking the surface
+              temperature for electricity generation, this region runs as a pure-utility asset: high-volume
+              intake pipelines pull 4&nbsp;°C water for two value streams.</p>
+            <p><strong>Vacuum-flash desalination</strong> boils seawater at ambient temperature inside
+              low-pressure chambers — a fraction of the energy of reverse osmosis. Chilled closed loops
+              cool agricultural soil for heatwave-proof crops and feed pathogen-free mariculture grids.</p>
+            <div class="region-panel__stats">
+              <div><b>85 MW</b><span>Utility power offset · Yr 10</span></div>
+              <div><b>Zero</b><span>Brine discharge (ZLD)</span></div>
+              <div><b>120 MGD</b><span>Freshwater across nodes · Yr 10</span></div>
+            </div>
+          </div>
+          <div class="region-panel__art region-art--cali" aria-hidden="true">
+            <div class="canyon">
+              <div class="canyon__drop"><span></span><span></span><span></span></div>
+              <div class="canyon__crystal"></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ TECHNOLOGY ============ -->
+    <section class="section" id="tech">
+      <div class="section__head reveal">
+        <span class="kicker">04 — Core Technology</span>
+        <h2 class="section__title">Four proven processes, one closed loop.</h2>
+      </div>
+      <div class="tech-grid">
+        <article class="tech-card reveal">
+          <h3><span class="tech-card__abbr">OTEC</span>Ocean Thermal Energy Conversion</h3>
+          <p>A closed ammonia cycle exploits the warm-surface / cold-deep gradient to spin turbines —
+            firm, 24/7, zero-emission baseload that solar and wind cannot match.</p>
+        </article>
+        <article class="tech-card reveal">
+          <h3><span class="tech-card__abbr">DSWU</span>Deep Sea Water Utilization</h3>
+          <p>Cold, nutrient-dense, pathogen-free abyssal water becomes a feedstock for cooling,
+            desalination, aquaculture, and chilled-soil agriculture.</p>
+        </article>
+        <article class="tech-card reveal">
+          <h3><span class="tech-card__abbr">VFD</span>Vacuum-Flash Desalination</h3>
+          <p>Low-pressure chambers boil seawater at ambient temperature, producing potable water at a
+            fraction of reverse-osmosis energy — no high-pressure membranes.</p>
+        </article>
+        <article class="tech-card reveal">
+          <h3><span class="tech-card__abbr">ZLD</span>Zero Liquid Discharge</h3>
+          <p>Fractional crystallization evaporates brine completely — eliminating toxic dumping and
+            converting waste into high-value mineral commodities.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ CIRCULAR ECONOMY ============ -->
+    <section class="section section--mineral" id="mineral">
+      <div class="section__head reveal">
+        <span class="kicker">05 — Circular Economy</span>
+        <h2 class="section__title">We don't dump brine. We mine it.</h2>
+        <p class="section__lead">Traditional desalination kills marine life with hyper-saline discharge.
+          TROIB's Zero Liquid Discharge process evaporates brine entirely, segmenting it into
+          industrial-grade commodities.</p>
+      </div>
+      <div class="mineral-grid">
+        <article class="mineral-card reveal">
+          <div class="mineral-card__sym">NaCl</div>
+          <h3>Industrial &amp; Culinary Salt</h3>
+          <p>Pure sodium chloride for water softening, chemical processes, and premium gourmet markets.</p>
+          <div class="mineral-card__yield">1.4M <span>metric tons / yr · Yr 10</span></div>
+        </article>
+        <article class="mineral-card reveal">
+          <div class="mineral-card__sym">MgCl₂</div>
+          <h3>Magnesium</h3>
+          <p>Lightweight automotive &amp; aerospace alloys and next-generation battery chemistries.</p>
+          <div class="mineral-card__yield">68,000 <span>tons / yr · Yr 10</span></div>
+        </article>
+        <article class="mineral-card reveal">
+          <div class="mineral-card__sym">Li₂CO₃</div>
+          <h3>Lithium &amp; Potassium</h3>
+          <p>Battery-grade lithium carbonate and agricultural-grade potassium from the mineral matrix.</p>
+          <div class="mineral-card__yield">950 <span>tons / yr · Yr 10</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ FORECASTS ============ -->
+    <section class="section" id="forecast">
+      <div class="section__head reveal">
+        <span class="kicker">06 — 10-Year Forecast</span>
+        <h2 class="section__title">Phased from pilot to commercial maturity.</h2>
+        <p class="section__lead">Year 1–3 pilot (1 Gulf rig · 1 Florida plantship · 1 California facility) →
+          Year 4–7 scale (5 · 3 · 2) → Year 10 full commercial maturity.</p>
+      </div>
+      <div class="metric-grid">
+        <div class="metric reveal"><span class="counter" data-to="500" data-suf=" MW" data-dec="0">0</span><b>Gulf gross power · Yr 10</b></div>
+        <div class="metric reveal"><span class="counter" data-to="600" data-suf=" MW" data-dec="0">0</span><b>Florida grid power · Yr 10</b></div>
+        <div class="metric reveal"><span class="counter" data-to="250" data-suf=" MW" data-dec="0">0</span><b>SWAC cooling offset · Yr 10</b></div>
+        <div class="metric reveal"><span class="counter" data-to="120" data-suf=" MGD" data-dec="0">0</span><b>Freshwater · Yr 10</b></div>
+        <div class="metric reveal"><span class="counter" data-to="1.4" data-suf="M t" data-dec="1">0</span><b>Salt yield / yr · Yr 10</b></div>
+        <div class="metric reveal"><span class="counter" data-to="68000" data-suf="" data-dec="0">0</span><b>Tons magnesium / yr · Yr 10</b></div>
+      </div>
+    </section>
+
+    <!-- ============ FINANCIALS ============ -->
+    <section class="section section--fin" id="financials">
+      <div class="section__head reveal">
+        <span class="kicker">07 — Pro-Forma Financials</span>
+        <h2 class="section__title">Four revenue streams. One de-risked thesis.</h2>
+        <p class="section__lead">Diversification across data centers, grid power, water, minerals, and green
+          fuel drastically lowers investor risk versus single-utility infrastructure. All figures in USD millions.</p>
+      </div>
+
+      <div class="fin-wrap reveal">
+        <div class="fin-chart" id="finChart" aria-hidden="true">
+          <div class="fin-chart__yaxis">
+            <span>$1.35B</span><span>$1.0B</span><span>$680M</span><span>$340M</span><span>$0</span>
+          </div>
+          <div class="fin-chart__cols">
+            <!-- columns injected by JS -->
+          </div>
+          <div class="fin-chart__legend">
+            <span data-k="dc">Data Center</span>
+            <span data-k="grid">Grid Power</span>
+            <span data-k="water">Water</span>
+            <span data-k="mineral">Minerals</span>
+            <span data-k="fuel">Green Fuel</span>
+          </div>
+        </div>
+
+        <div class="fin-table-wrap">
+          <table class="fin-table">
+            <thead>
+              <tr><th>Revenue Stream</th><th>Yr 3</th><th>Yr 7</th><th>Yr 10</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Data Center Infrastructure <em>(power &amp; cooling lease)</em></td><td>$42.0</td><td>$210.0</td><td>$588.0</td></tr>
+              <tr><td>Grid Electricity <em>(PPA ~$0.07/kWh)</em></td><td>$43.0</td><td>$172.0</td><td>$306.0</td></tr>
+              <tr><td>Municipal Water <em>($1,200/acre-foot)</em></td><td>$20.2</td><td>$80.8</td><td>$161.6</td></tr>
+              <tr><td>Mineral &amp; Salt Commodities</td><td>$18.5</td><td>$74.0</td><td>$155.0</td></tr>
+              <tr><td>Green Fuel <em>(H₂ / ammonia)</em></td><td>$12.0</td><td>$60.0</td><td>$144.0</td></tr>
+              <tr class="fin-table__total"><td>Total Gross Revenue</td><td>$135.7</td><td>$596.8</td><td>$1,354.6</td></tr>
+              <tr class="fin-table__opex"><td>Estimated OPEX</td><td>($45.0)</td><td>($165.0)</td><td>($310.0)</td></tr>
+              <tr class="fin-table__ebitda"><td>Projected Net EBITDA</td><td>$90.7</td><td>$431.8</td><td>$1,044.6</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ADVANTAGES ============ -->
+    <section class="section" id="advantages">
+      <div class="section__head reveal">
+        <span class="kicker">08 — Strategic Moat</span>
+        <h2 class="section__title">Why TROIB wins the decade.</h2>
+      </div>
+      <div class="adv-grid">
+        <article class="adv-card reveal">
+          <div class="adv-card__big">−40%</div>
+          <h3>CapEx reduction</h3>
+          <p>Acquiring decommissioned rigs via the federal <strong>Rigs-to-Reefs</strong> framework
+            circumvents up to 40% of the open-ocean anchoring and structural costs rivals must absorb.</p>
+        </article>
+        <article class="adv-card reveal">
+          <div class="adv-card__big">ZLD</div>
+          <h3>Regulatory alignment</h3>
+          <p>Zero Liquid Discharge sidesteps the multi-year environmental litigation that traps
+            conventional desalination over toxic brine — clearing the permitting path.</p>
+        </article>
+        <article class="adv-card reveal">
+          <div class="adv-card__big">1.02</div>
+          <h3>Unmatched PUE</h3>
+          <p>Hyperscalers on our rigs or SWAC loops hit a Power Usage Effectiveness of
+            <strong>1.02–1.05</strong> — the premier destination for carbon-neutral, water-positive mandates.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ INVEST / CTA ============ -->
+    <section class="section section--cta" id="invest">
+      <div class="cta reveal">
+        <span class="kicker">09 — Partner With TROIB</span>
+        <h2>Power the intelligence age<br/>without burning the planet.</h2>
+        <p>We're assembling capital, hyperscale offtake partners, and coastal development allies for the
+          pilot phase. If you're building the future of AI, water, or clean energy — let's talk.</p>
+        <div class="cta__actions">
+          <a class="btn btn--solid" href="mailto:invest@troip.xyz?subject=TROIB%20Investor%20Brief%20Request">Request the Investor Brief</a>
+          <a class="btn btn--ghost" href="mailto:partners@troip.xyz?subject=TROIB%20Partnership">Explore a Partnership</a>
+        </div>
+        <p class="cta__fine">invest@troip.xyz · partners@troip.xyz · troip.xyz</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <span class="nav__name">TROIB</span>
+        <p>Tri-Regional Ocean Infrastructure Blueprint — harnessing the ocean's thermal gradient
+          for power, cooling, water, and minerals across the Gulf, Florida, and Southern California.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="#crisis">The Thesis</a>
+        <a href="#blueprint">Blueprint</a>
+        <a href="#regions">Regions</a>
+        <a href="#forecast">Forecasts</a>
+        <a href="#financials">Financials</a>
+        <a href="#invest">Invest</a>
+      </nav>
+    </div>
+    <div class="footer__bar">
+      <span>© <span id="year">2026</span> TROIB. All rights reserved.</span>
+      <span class="footer__note">Forward-looking projections; not an offer to sell securities.</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
