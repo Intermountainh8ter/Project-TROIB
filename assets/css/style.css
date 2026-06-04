@@ -1,7 +1,8 @@
 /* =========================================================
    TROIB — "The Thermal Gradient" design system
    Palette: abyssal navy · bioluminescent teal · thermal coral · mineral gold
-   Type: Syne (display) · Space Grotesk (body) · Space Mono (data)
+   Type: Archivo Expanded (architectural display) · Space Grotesk (body) · Space Mono (data)
+   Headings: brushed-silver / chrome metallic treatment
    ========================================================= */
 
 :root {
@@ -34,7 +35,7 @@
   --ease: cubic-bezier(.22,.61,.36,1);
   --shadow: 0 24px 60px -24px rgba(0,0,0,.65);
 
-  --font-display: "Syne", system-ui, sans-serif;
+  --font-display: "Archivo Expanded", "Archivo", system-ui, sans-serif;
   --font-body: "Space Grotesk", system-ui, sans-serif;
   --font-mono: "Space Mono", ui-monospace, monospace;
 }
@@ -117,6 +118,32 @@ main, .footer { position: relative; z-index: 2; }
   -webkit-text-fill-color: transparent; color: transparent;
 }
 
+/* ---------- brushed-silver / chrome display treatment ---------- */
+/* Architectural metal: vertical polished-steel sheen + faint brushed grain */
+.section__title,
+.hero__title,
+.cta h2,
+.nav__name,
+.region-panel h3,
+.flow__source h3 {
+  background-image:
+    repeating-linear-gradient(90deg, rgba(255,255,255,0) 0 3px, rgba(2,8,15,.05) 3px 4px),
+    linear-gradient(176deg,
+      #ffffff 0%,
+      #e4e9f0 20%,
+      #b3bcca 42%,
+      #828c9b 51%,
+      #aab3c1 60%,
+      #e8edf3 80%,
+      #ffffff 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  filter: drop-shadow(0 1px 0 rgba(255,255,255,.10)) drop-shadow(0 2px 6px rgba(0,0,0,.45));
+  letter-spacing: -.005em;
+}
+/* keep the thermal accent word readable as a colored highlight inside metallic headings */
+.hero__title .grad-text { filter: none; }
+
 /* ---------- buttons ---------- */
 .btn {
   display: inline-flex; align-items: center; gap: .5rem; cursor: pointer;
@@ -178,8 +205,8 @@ main, .footer { position: relative; z-index: 2; }
 }
 .hero__title {
   font-family: var(--font-display); font-weight: 800;
-  font-size: clamp(2.6rem, 7.5vw, 5.8rem); line-height: .98; letter-spacing: -.03em;
-  max-width: 16ch;
+  font-size: clamp(2.4rem, 6.8vw, 5.2rem); line-height: 1.02; letter-spacing: -.01em;
+  max-width: 18ch;
 }
 .hero__sub {
   margin-top: 1.8rem; max-width: 60ch; color: var(--muted);

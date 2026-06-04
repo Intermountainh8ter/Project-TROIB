@@ -18,7 +18,7 @@ Conversion (OTEC) actually works. A scroll "depth gauge" tracks your descent fro
 ~3,000 m (the depth of the cold-water intake pipes).
 
 **Palette** — abyssal navy · bioluminescent teal · thermal coral · mineral gold
-**Type** — `Syne` (display) · `Space Grotesk` (body) · `Space Mono` (data)
+**Type** — `Archivo Expanded` (architectural display, brushed-silver/chrome headings) · `Space Grotesk` (body) · `Space Mono` (data)
 
 No frameworks, no build step — hand-written **HTML + CSS + vanilla JS**. Highlights:
 
