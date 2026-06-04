@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Closed-Cycle Ammonia OTEC — TROIB Engineering Brief</title>
+  <meta name="description" content="Thermodynamic basis and net power yield of a closed-cycle anhydrous-ammonia Ocean Thermal Energy Conversion plant for the TROIB Gulf of Mexico zone. Conceptual engineering brief." />
+  <meta name="theme-color" content="#04111f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="paper.css" />
+  <link rel="canonical" href="https://troip.xyz/papers/otec-thermodynamics" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Closed-Cycle Ammonia OTEC — TROIB Engineering Brief" />
+  <meta property="og:description" content="Thermodynamic basis and net power yield of a closed-cycle anhydrous-ammonia Ocean Thermal Energy Conversion plant for the TROIB Gulf of Mexico zone. Conceptual engineering brief." />
+  <meta property="og:url" content="https://troip.xyz/papers/otec-thermodynamics" />
+  <meta property="og:site_name" content="TROIB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="citation_title" content="Closed-Cycle Ammonia OTEC" />
+  <meta name="citation_author" content="TROIB" />
+  <meta name="citation_publication_date" content="2026" />
+  <meta name="citation_technical_report_institution" content="TROIB — Tri-Regional Ocean Infrastructure Blueprint" />
+  <meta name="citation_doi" content="10.5281/zenodo.PENDING" />
+</head>
+<body>
+  <div class="bg-nothing" aria-hidden="true"></div>
+  <a class="paper-nav" href="../index.html">&larr; Back to TROIB</a>
+  <button class="print-btn" onclick="window.print()">&#9113; Print / Save as PDF</button>
+
+  <article class="doc">
+
+    <!-- ===================== COVER ===================== -->
+    <header class="cover">
+      <p class="eyebrow">TROIB &middot; Engineering Brief</p>
+      <h1 class="title">Closed-Cycle Ammonia OTEC: Thermodynamic Basis and Net Power Yield</h1>
+      <p class="subtitle">A first-principles treatment of the Carnot ceiling, the practical Rankine cycle on anhydrous ammonia, and the parasitic-load accounting that sets net electrical output for utility-scale Ocean Thermal Energy Conversion in the TROIB Gulf zone.</p>
+      <div class="meta-row">
+        <span><b>Document No.</b> TROIB-EB-01</span>
+        <span><b>Revision</b> A</span>
+        <span><b>Classification:</b> Conceptual / Illustrative</span>
+        <span><b>Date:</b> 2026</span>
+        <span><b>DOI:</b> pending &middot; Zenodo</span>
+      </div>
+    </header>
+
+    <!-- ===================== DISCLAIMER ===================== -->
+    <aside class="disclaimer">
+      <strong>Conceptual Engineering Brief</strong>
+      Figures, performance estimates, and projections are illustrative and forward-looking; they describe a proposed system architecture and do not represent built, measured, or independently verified results.
+    </aside>
+
+    <!-- ===================== ABSTRACT ===================== -->
+    <section class="abstract">
+      <h2>Abstract</h2>
+      <p>Ocean Thermal Energy Conversion (OTEC) extracts work from the standing temperature difference between warm tropical surface water (&asymp;24&ndash;25&nbsp;&deg;C) and cold abyssal water (&asymp;4&nbsp;&deg;C) drawn from roughly 915&nbsp;m (3,000&nbsp;ft) depth. With a gradient of only &Delta;T&nbsp;&asymp;&nbsp;20&nbsp;&deg;C the ideal Carnot ceiling is near 7&nbsp;%, and a real closed-cycle plant converts on the order of 3&ndash;4&nbsp;% of gross thermal throughput to <em>net</em> electricity after parasitic loads. This brief develops the thermodynamic basis of a closed Rankine cycle using anhydrous ammonia (NH<sub>3</sub>) as the working fluid, maps each stage to the TROIB plant schematic, and presents an energy balance that resolves gross versus net power across the proposed Gulf of Mexico deployment ramp (50&nbsp;MW<sub>gross</sub>&nbsp;/&nbsp;35&nbsp;MW<sub>net</sub> at Year&nbsp;3 rising to 500&nbsp;MW<sub>gross</sub>&nbsp;/&nbsp;350&nbsp;MW<sub>net</sub> across a ten-platform cluster by Year&nbsp;10). The dominant parasitic load &mdash; cold-water pumping &mdash; is shown to be the central design driver, dictating both heat-exchanger surface area and cold-water-pipe diameter.</p>
+    </section>
+
+    <!-- ===================== 1 ===================== -->
+    <h2 class="sec">The Resource and the Carnot Ceiling</h2>
+    <p>The tropical and subtropical ocean is a continuously recharged thermal reservoir. Solar flux maintains a warm mixed layer while the deep ocean retains cold, dense water that originated at the poles. In the TROIB Gulf of Mexico zone the design state points are a warm surface reservoir at T<sub>warm</sub>&nbsp;&asymp;&nbsp;24&ndash;25&nbsp;&deg;C and a cold reservoir at T<sub>cold</sub>&nbsp;&asymp;&nbsp;4&nbsp;&deg;C accessed through a 915&nbsp;m cold-water pipe (CWP). Because OTEC is a heat engine, its <em>maximum theoretically attainable</em> efficiency is the Carnot efficiency evaluated on <strong>absolute</strong> temperatures:</p>
+
+    <div class="eq">
+      <span class="expr">&eta;<sub>Carnot</sub> = (T<sub>warm</sub> &minus; T<sub>cold</sub>) / T<sub>warm</sub></span>
+      <span class="num"></span>
+    </div>
+
+    <p>Substituting T<sub>warm</sub>&nbsp;&asymp;&nbsp;298&nbsp;K (25&nbsp;&deg;C) and T<sub>cold</sub>&nbsp;&asymp;&nbsp;277&nbsp;K (4&nbsp;&deg;C):</p>
+
+    <div class="eq">
+      <span class="expr">&eta;<sub>Carnot</sub> = (298 &minus; 277) / 298 = 21 / 298 &asymp; 0.070 &asymp; <strong>7.0&nbsp;%</strong></span>
+      <span class="num"></span>
+    </div>
+
+    <p>This 7&nbsp;% ceiling is the single most important fact in OTEC engineering. Unlike a combustion plant burning fuel near 1,800&nbsp;K, an OTEC plant works across a vanishingly small temperature ratio, so the <span class="tok">absolute</span> conversion efficiency is low <em>by physics, not by engineering deficiency</em>. The design response is not to chase efficiency but to move enormous volumes of water cheaply: the resource is free and effectively unlimited, so economics are governed by the capital cost of heat-transfer area and pumping, not by fuel.</p>
+
+    <!-- ===================== 2 ===================== -->
+    <h2 class="sec">The Closed Rankine Cycle on Ammonia</h2>
+    <p>TROIB adopts a <strong>closed-cycle</strong> architecture. A low-boiling-point working fluid is circulated in a sealed loop; seawater never changes phase and never contacts the turbine. Anhydrous ammonia (NH<sub>3</sub>) is selected because it boils near &minus;33&nbsp;&deg;C at atmospheric pressure, has an exceptionally high latent heat of vaporization (&asymp;1,370&nbsp;kJ/kg), and exhibits favourable heat-transfer coefficients &mdash; allowing a compact pressure-driven cycle within the narrow 20&nbsp;&deg;C window.</p>
+
+    <h3 class="sub">Cycle stages</h3>
+    <p>The four canonical stages, mapped to the schematic in Figure&nbsp;1, are:</p>
+    <p><strong>1. Evaporator.</strong> Warm surface seawater (&asymp;25&nbsp;&deg;C) flows through a plate or shell-and-tube exchanger and boils pressurized liquid ammonia into saturated vapour at roughly 9&ndash;10&nbsp;bar. <strong>2. Turbine.</strong> The high-pressure vapour expands across a turbine-generator, producing shaft work. <strong>3. Condenser.</strong> Cold deep seawater (&asymp;4&nbsp;&deg;C) condenses the low-pressure exhaust vapour back to liquid at roughly 5&ndash;6&nbsp;bar. <strong>4. Feed pump.</strong> A small feed pump returns the condensate to evaporator pressure, closing the loop. The net cycle work is the turbine output less the feed-pump work; the dominant external parasitic is the <em>seawater</em> pumping that feeds both heat exchangers.</p>
+
+    <figure class="fig">
+      <img src="../assets/diagrams/otec-cycle.svg" style="width:100%" alt="Closed-cycle ammonia OTEC schematic showing warm surface seawater boiling ammonia to drive a turbine-generator, with cold deep seawater condensing the working fluid in a continuous loop." />
+      <figcaption>Closed-cycle anhydrous-ammonia OTEC loop. Warm surface seawater (&asymp;25&nbsp;&deg;C) vaporizes ammonia in the evaporator; the vapour drives the turbine-generator; cold seawater (&asymp;4&nbsp;&deg;C) from the 915&nbsp;m cold-water pipe condenses it; the feed pump returns liquid ammonia to evaporator pressure. Seawater remains single-phase throughout.</figcaption>
+    </figure>
+
+    <!-- ===================== 3 ===================== -->
+    <h2 class="sec">Turbine Work and the Energy Balance</h2>
+    <p>The gross shaft power produced by the turbine is the working-fluid mass flow multiplied by the enthalpy drop across the expansion:</p>
+
+    <div class="eq">
+      <span class="expr">W&#775;<sub>turbine</sub> = m&#775;<sub>NH&#8323;</sub> &middot; &Delta;h = m&#775;<sub>NH&#8323;</sub> &middot; (h<sub>in</sub> &minus; h<sub>out</sub>)</span>
+      <span class="num"></span>
+    </div>
+
+    <p>where m&#775;<sub>NH&#8323;</sub> is the ammonia mass-flow rate (kg/s) and &Delta;h is the isentropic enthalpy drop (kJ/kg) modified by turbine isentropic efficiency. Because &Delta;h across the small available pressure ratio is modest, large electrical output demands large working-fluid mass flow &mdash; which in turn demands large heat-exchanger throughput on both the warm and cold seawater sides.</p>
+
+    <p>Net electrical output is gross generator output minus the sum of parasitic loads:</p>
+
+    <div class="eq">
+      <span class="expr">P<sub>net</sub> = P<sub>gross</sub> &minus; P<sub>parasitic</sub> = P<sub>gross</sub> &minus; (P<sub>cwp</sub> + P<sub>wwp</sub> + P<sub>feed</sub> + P<sub>aux</sub>)</span>
+      <span class="num"></span>
+    </div>
+
+    <p>where P<sub>cwp</sub> is cold-water-pipe pumping, P<sub>wwp</sub> warm-water pumping, P<sub>feed</sub> the ammonia feed pump, and P<sub>aux</sub> auxiliaries. Empirically, parasitic loads consume on the order of 25&ndash;35&nbsp;% of gross output in a well-designed plant, collapsing the &asymp;7&nbsp;% Carnot ceiling to a delivered <strong>net</strong> efficiency near 3&ndash;4&nbsp;%. Table&nbsp;1 gives an illustrative single-platform energy balance.</p>
+
+    <div class="tbl-wrap">
+      <table class="data">
+        <caption>Illustrative single-platform OTEC energy balance (Year-3 reference module).</caption>
+        <thead>
+          <tr><th>Stream / term</th><th>Symbol</th><th>Value</th><th>Note</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Gross generator output</td><td>P<sub>gross</sub></td><td class="num">50.0 MW</td><td>turbine-generator terminal</td></tr>
+          <tr><td>Cold-water pumping</td><td>P<sub>cwp</sub></td><td class="num">&minus;9.5 MW</td><td>dominant parasitic</td></tr>
+          <tr><td>Warm-water pumping</td><td>P<sub>wwp</sub></td><td class="num">&minus;3.5 MW</td><td>shorter lift</td></tr>
+          <tr><td>Ammonia feed pump</td><td>P<sub>feed</sub></td><td class="num">&minus;1.2 MW</td><td>closed loop</td></tr>
+          <tr><td>Auxiliaries / controls</td><td>P<sub>aux</sub></td><td class="num">&minus;0.8 MW</td><td>instrumentation, BOP</td></tr>
+          <tr><td><strong>Net export power</strong></td><td>P<sub>net</sub></td><td class="num">&asymp; 35.0 MW</td><td>30&nbsp;% parasitic fraction</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===================== 4 ===================== -->
+    <h2 class="sec">Heat-Exchanger Sizing Intuition</h2>
+    <p>Heat transfer obeys Q&nbsp;=&nbsp;U&middot;A&middot;&Delta;T<sub>lm</sub>, where U is the overall heat-transfer coefficient, A the surface area, and &Delta;T<sub>lm</sub> the log-mean temperature difference. In a conventional power plant &Delta;T<sub>lm</sub> may be hundreds of degrees; in OTEC the <em>available</em> gradient is 20&nbsp;&deg;C, and after allocating temperature pinch to the evaporator and condenser the working &Delta;T<sub>lm</sub> per exchanger is only a few degrees. Since A scales inversely with &Delta;T<sub>lm</sub>, OTEC heat exchangers are physically enormous &mdash; they are the dominant capital item and the principal reason OTEC has historically remained at demonstration scale.</p>
+    <p>TROIB mitigates this two ways: (i) high-performance plate or roll-bonded aluminium exchangers that raise U, and (ii) co-locating the power block on a re-used deepwater platform (see companion brief TROIB-EB-02), which amortizes the structural cost of supporting heavy exchangers over an existing asset.</p>
+
+    <div class="specs">
+      <div class="spec"><div class="v">7.0<small>&nbsp;%</small></div><div class="k">Carnot ceiling &middot; &Delta;T 20&nbsp;&deg;C</div></div>
+      <div class="spec"><div class="v">3&ndash;4<small>&nbsp;%</small></div><div class="k">Net delivered efficiency</div></div>
+      <div class="spec"><div class="v">~30<small>&nbsp;%</small></div><div class="k">Parasitic fraction of gross</div></div>
+      <div class="spec"><div class="v">915<small>&nbsp;m</small></div><div class="k">Cold-water-pipe depth</div></div>
+    </div>
+
+    <!-- ===================== 5 ===================== -->
+    <h2 class="sec">Cold-Water Pipe Flow and the Dominant Parasitic</h2>
+    <p>The cold-water pump is the single largest parasitic load because it must lift and accelerate a very large volumetric flow through a long, large-diameter pipe. The pumping power required is:</p>
+
+    <div class="eq">
+      <span class="expr">P<sub>cwp</sub> = (&rho; &middot; g &middot; Q &middot; H<sub>loss</sub>) / &eta;<sub>pump</sub></span>
+      <span class="num"></span>
+    </div>
+
+    <p>where Q is volumetric flow (m<sup>3</sup>/s), &rho; seawater density (&asymp;1,025&nbsp;kg/m<sup>3</sup>), g gravitational acceleration, H<sub>loss</sub> the total dynamic head (friction plus the small density-difference penalty between the warm column and the colder, denser pumped water), and &eta;<sub>pump</sub> pump efficiency. Note that OTEC does <em>not</em> pay to lift water 915&nbsp;m against gravity &mdash; the warm and cold columns nearly balance &mdash; so H<sub>loss</sub> is dominated by pipe friction. This is why CWP design centres on maximizing diameter to minimize velocity (and thus friction, which scales with velocity squared) for a target mass flow.</p>
+
+    <p>Because each unit of net power requires moving roughly 3&ndash;4&nbsp;m<sup>3</sup>/s of cold seawater per megawatt, a 35&nbsp;MW<sub>net</sub> module circulates on the order of 120&nbsp;m<sup>3</sup>/s of deep water &mdash; flow rates comparable to a small river. Sizing the CWP to keep velocity near 2&nbsp;m/s drives pipe internal diameters into the 8&ndash;10&nbsp;m range for the largest single-platform modules; composite (FRP) pipe is favoured for its strength-to-weight ratio and corrosion immunity over the 20&nbsp;year service life.</p>
+
+    <!-- ===================== 6 ===================== -->
+    <h2 class="sec">Deployment Ramp and Cluster Output</h2>
+    <p>The TROIB Gulf zone scales from a single demonstration-scale module to a ten-platform cluster. Table&nbsp;2 summarizes the illustrative gross/net trajectory; the constant &asymp;30&nbsp;% parasitic fraction reflects the assumption that per-module CWP and exchanger design is replicated rather than re-optimized at each step.</p>
+
+    <div class="tbl-wrap">
+      <table class="data">
+        <caption>Illustrative Gulf-zone OTEC deployment ramp.</caption>
+        <thead>
+          <tr><th>Milestone</th><th>Platforms</th><th>Gross power</th><th>Net export</th><th>Net fraction</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Year 3 (demo module)</td><td class="num">1</td><td class="num">50 MW</td><td class="num">35 MW</td><td class="num">70 %</td></tr>
+          <tr><td>Year 6 (early cluster)</td><td class="num">4&ndash;5</td><td class="num">230 MW</td><td class="num">160 MW</td><td class="num">70 %</td></tr>
+          <tr><td>Year 10 (full cluster)</td><td class="num">10</td><td class="num">500 MW</td><td class="num">350 MW</td><td class="num">70 %</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>At full build the cluster contributes the OTEC share of the TROIB ten-year target of &asymp;1,100&nbsp;MW of clean power across all three zones. Net power that is not consumed by co-located AI compute is routed to electrolytic production of green hydrogen and ammonia for export, converting otherwise-stranded offshore capacity into a shippable energy product.</p>
+
+    <!-- ===================== NOMENCLATURE ===================== -->
+    <h2 class="sec">Nomenclature</h2>
+    <table class="nomen">
+      <tr><th>&eta;<sub>Carnot</sub></th><td>Ideal Carnot thermal efficiency (dimensionless)</td></tr>
+      <tr><th>T<sub>warm</sub></th><td>Warm-reservoir absolute temperature (K)</td></tr>
+      <tr><th>T<sub>cold</sub></th><td>Cold-reservoir absolute temperature (K)</td></tr>
+      <tr><th>&Delta;T</th><td>Surface-to-deep temperature difference (&deg;C / K)</td></tr>
+      <tr><th>W&#775;<sub>turbine</sub></th><td>Gross turbine shaft power (W)</td></tr>
+      <tr><th>m&#775;<sub>NH&#8323;</sub></th><td>Ammonia working-fluid mass-flow rate (kg/s)</td></tr>
+      <tr><th>&Delta;h</th><td>Enthalpy drop across the turbine (kJ/kg)</td></tr>
+      <tr><th>P<sub>gross</sub></th><td>Gross generator electrical output (W)</td></tr>
+      <tr><th>P<sub>net</sub></th><td>Net exportable electrical power (W)</td></tr>
+      <tr><th>P<sub>cwp</sub></th><td>Cold-water-pipe pumping power (W)</td></tr>
+      <tr><th>Q</th><td>Volumetric seawater flow rate (m<sup>3</sup>/s)</td></tr>
+      <tr><th>H<sub>loss</sub></th><td>Total dynamic head loss (m)</td></tr>
+      <tr><th>U, A</th><td>Overall heat-transfer coefficient (W/m<sup>2</sup>K), area (m<sup>2</sup>)</td></tr>
+    </table>
+
+    <!-- ===================== REFERENCES ===================== -->
+    <h2 class="sec">Selected References (illustrative)</h2>
+    <ol class="refs">
+      <li>National Renewable Energy Laboratory. <em>Ocean Thermal Energy Conversion: Resource Assessment and Plant Performance Modeling.</em> Conceptual reference, illustrative.</li>
+      <li>U.S. Department of Energy, Water Power Technologies Office. <em>Marine Energy Technology Review: OTEC Closed-Cycle Systems.</em> Conceptual reference, illustrative.</li>
+      <li>Avery, W. H. &amp; Wu, C. <em>Renewable Energy from the Ocean: A Guide to OTEC.</em> Illustrative bibliographic entry.</li>
+      <li>Vega, L. A. <em>Economics of Ocean Thermal Energy Conversion.</em> Illustrative bibliographic entry.</li>
+      <li>TROIB Project. <em>Engineering Brief TROIB-EB-02: Co-Locating AI Compute on Decommissioned Deepwater Platforms.</em> Companion document.</li>
+    </ol>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="doc-footer">
+      <div class="brand">&copy; 2026 TROIB &middot; troip.xyz</div>
+      <p class="fine">Conceptual engineering brief. Figures, performance estimates, and projections are illustrative and forward-looking; they describe a proposed system architecture and do not represent built, measured, or independently verified results.</p>
+      <span class="print-footnote">TROIB-EB-01 &middot; Closed-Cycle Ammonia OTEC &middot; Conceptual / Illustrative &middot; &copy; 2026 troip.xyz</span>
+    </footer>
+
+  </article>
+</body>
+</html>

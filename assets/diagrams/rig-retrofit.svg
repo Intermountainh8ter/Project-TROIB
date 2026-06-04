@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 640" role="img" aria-label="Cross-section of a decommissioned Spar platform retrofitted for TROIB: AI data modules and an OTEC power block sit on the deck, a 3,000-foot cold-water pipe runs down the moonpool to 4 degree Celsius water.">
+  <defs>
+    <linearGradient id="rr-col" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a2238"/><stop offset="0.45" stop-color="#072034"/><stop offset="1" stop-color="#020c16"/>
+    </linearGradient>
+    <linearGradient id="rr-pipe" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00e0c7"/><stop offset="1" stop-color="#2a7bff"/>
+    </linearGradient>
+    <marker id="rr-up" markerWidth="9" markerHeight="9" refX="3" refY="6" orient="auto"><path d="M0,6 L3,0 L6,6 Z" fill="#00e0c7"/></marker>
+    <marker id="rr-r" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ffd166"/></marker>
+    <style>
+      .l{font-family:'Space Mono',ui-monospace,monospace;fill:#c9d8de;font-size:14px}
+      .s{font-family:'Space Mono',ui-monospace,monospace;fill:#7e96a4;font-size:11.5px}
+      .t{font-family:'Space Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.06em}
+    </style>
+  </defs>
+
+  <rect width="680" height="640" rx="16" fill="url(#rr-col)"/>
+  <!-- sky band + sea -->
+  <rect x="0" y="220" width="680" height="420" fill="#0a2a44" opacity="0.35"/>
+  <line x1="0" y1="220" x2="680" y2="220" stroke="#2ad4ff" stroke-opacity=".4" stroke-dasharray="4 5"/>
+  <text x="20" y="212" class="t" fill="#2ad4ff">SEA SURFACE</text>
+
+  <!-- DECK -->
+  <rect x="150" y="120" width="380" height="26" fill="#11314c" stroke="#00e0c7" stroke-opacity=".5"/>
+  <!-- AI data modules -->
+  <g>
+    <rect x="168" y="78" width="58" height="42" fill="#0e2c45" stroke="#ff7a45" stroke-width="1.5"/>
+    <rect x="232" y="78" width="58" height="42" fill="#0e2c45" stroke="#ff7a45" stroke-width="1.5"/>
+    <rect x="296" y="78" width="58" height="42" fill="#0e2c45" stroke="#ffd166" stroke-width="1.5"/>
+    <rect x="176" y="86" width="6" height="26" fill="#ff7a45"/><rect x="186" y="86" width="6" height="26" fill="#ffd166"/><rect x="196" y="86" width="6" height="26" fill="#00e0c7"/>
+    <rect x="240" y="86" width="6" height="26" fill="#ffd166"/><rect x="250" y="86" width="6" height="26" fill="#00e0c7"/><rect x="260" y="86" width="6" height="26" fill="#ff7a45"/>
+  </g>
+  <text x="170" y="68" class="l">AI TRAINING MODULES</text>
+  <text x="170" y="56" class="s">liquid / direct-to-chip immersion cooled</text>
+
+  <!-- OTEC block -->
+  <rect x="400" y="74" width="120" height="46" fill="#0e2c45" stroke="#00e0c7" stroke-width="1.5"/>
+  <text x="460" y="94" class="l" text-anchor="middle">OTEC</text>
+  <text x="460" y="110" class="s" text-anchor="middle">power block</text>
+  <!-- power arrow OTEC -> modules -->
+  <path d="M400,97 H362" stroke="#ffd166" stroke-width="2.5" fill="none" marker-end="url(#rr-r)"/>
+  <!-- green fuel output -->
+  <path d="M520,97 H600" stroke="#ffd166" stroke-width="2.5" fill="none" marker-end="url(#rr-r)"/>
+  <text x="536" y="88" class="s" fill="#ffd166">→ H₂ / NH₃</text>
+
+  <!-- SPAR hull / column -->
+  <rect x="300" y="146" width="80" height="300" fill="#0c2840" stroke="#3a5870" stroke-width="1.5"/>
+  <text x="392" y="300" class="s">SPAR HULL</text>
+  <text x="392" y="316" class="s">(buoyant column)</text>
+
+  <!-- MOONPOOL cold-water pipe -->
+  <rect x="328" y="146" width="24" height="454" fill="url(#rr-pipe)" opacity=".92"/>
+  <text x="360" y="404" class="l" fill="#00e0c7">MOONPOOL CWP</text>
+  <text x="360" y="420" class="s">3,000 ft composite pipe</text>
+  <!-- cold up arrows inside pipe -->
+  <path d="M340,560 V470" stroke="#eaf4f4" stroke-width="2" opacity=".6" marker-end="url(#rr-up)"/>
+  <path d="M340,440 V360" stroke="#eaf4f4" stroke-width="2" opacity=".5" marker-end="url(#rr-up)"/>
+
+  <!-- mooring lines (TLP tendons) -->
+  <line x1="300" y1="446" x2="200" y2="600" stroke="#3a5870" stroke-width="2"/>
+  <line x1="380" y1="446" x2="480" y2="600" stroke="#3a5870" stroke-width="2"/>
+  <text x="150" y="596" class="s">taut moorings</text>
+
+  <!-- seabed-less deep tag -->
+  <rect x="0" y="600" width="680" height="40" fill="#2a7bff" opacity="0.08"/>
+  <text x="328" y="592" class="t" fill="#2ad4ff" text-anchor="middle">▼ 4 °C INTAKE</text>
+  <text x="20" y="628" class="t" fill="#8fa6b2">100% OFF-GRID · DEEP-SEA IMMERSION COOLING · CONTINUOUS BASELOAD</text>
+</svg>

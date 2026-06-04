@@ -17,10 +17,10 @@
   <meta property="og:site_name" content="TROIB" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Unique type pairing: Syne (display), Space Grotesk (body), Space Mono (data) -->
+  <!-- Unique type pairing: Archivo Expanded (architectural display), Space Grotesk (body), Space Mono (data) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Space+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
@@ -54,7 +54,7 @@
       <a href="#crisis">The Thesis</a>
       <a href="#blueprint">Blueprint</a>
       <a href="#regions">Regions</a>
-      <a href="#forecast">Forecasts</a>
+      <a href="#schematics">Engineering</a>
       <a href="#financials">Financials</a>
     </nav>
     <a href="#invest" class="btn btn--ghost nav__cta">Investor Brief</a>
@@ -64,6 +64,9 @@
   <main id="top">
     <!-- ============ HERO ============ -->
     <section class="hero" id="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <img src="assets/img/hero-rig-night.jpg" alt="" fetchpriority="high" width="3840" height="2560" />
+      </div>
       <div class="hero__inner">
         <p class="eyebrow reveal">Tri-Regional Ocean Infrastructure Blueprint</p>
         <h1 class="hero__title reveal">
@@ -124,6 +127,16 @@
         <div class="thesis-bridge__line"></div>
         <p>The deep sea sits at a constant <strong>4&nbsp;°C</strong>. The surface bakes at <strong>24&nbsp;°C+</strong>.
           That 20-degree gradient is a perpetual, planet-scale battery. TROIB converts it into electricity, cooling, water, and minerals — at once.</p>
+      </div>
+    </section>
+
+    <!-- image band -->
+    <section class="imgband" aria-label="A planet-scale battery">
+      <img src="assets/img/sunset-rig.jpg" alt="Offshore platform silhouetted against a dramatic ocean sunset" loading="lazy" />
+      <div class="imgband__inner reveal">
+        <p class="imgband__kicker">A planet-scale battery</p>
+        <h2 class="imgband__title">Every sunrise recharges 20&nbsp;°C of stored energy across the sea.</h2>
+        <p class="imgband__sub">The surface soaks up solar heat; the abyss stays near freezing. TROIB stands in that gap and converts it — continuously, with zero fuel.</p>
       </div>
     </section>
 
@@ -212,14 +225,10 @@
               <div><b>−40%</b><span>CapEx via Rigs-to-Reefs</span></div>
             </div>
           </div>
-          <div class="region-panel__art region-art--gulf" aria-hidden="true">
-            <div class="rig">
-              <div class="rig__deck"><span class="rig__server"></span><span class="rig__server"></span><span class="rig__server"></span></div>
-              <div class="rig__leg"></div>
-              <div class="rig__pipe"><span></span></div>
-              <div class="rig__cold">4&nbsp;°C</div>
-            </div>
-          </div>
+          <figure class="region-panel__art">
+            <img src="assets/img/gulf-platform.jpg" alt="Offshore production platform standing over the Gulf of Mexico" loading="lazy" width="3840" height="2560" />
+            <span class="art-tag">Gulf of Mexico · deepwater platform</span>
+          </figure>
         </article>
 
         <!-- FLORIDA -->
@@ -239,13 +248,10 @@
               <div><b>PUE 1.02</b><span>For SWAC-connected tenants</span></div>
             </div>
           </div>
-          <div class="region-panel__art region-art--florida" aria-hidden="true">
-            <div class="city">
-              <span class="city__tower"></span><span class="city__tower"></span>
-              <span class="city__tower"></span><span class="city__tower"></span>
-              <div class="city__loop"></div>
-            </div>
-          </div>
+          <figure class="region-panel__art">
+            <img src="assets/img/miami-skyline.jpg" alt="Downtown Miami skyline lit at night across the water" loading="lazy" width="3840" height="2560" />
+            <span class="art-tag">Miami · downtown SWAC district</span>
+          </figure>
         </article>
 
         <!-- CALI -->
@@ -265,13 +271,21 @@
               <div><b>120 MGD</b><span>Freshwater across nodes · Yr 10</span></div>
             </div>
           </div>
-          <div class="region-panel__art region-art--cali" aria-hidden="true">
-            <div class="canyon">
-              <div class="canyon__drop"><span></span><span></span><span></span></div>
-              <div class="canyon__crystal"></div>
-            </div>
-          </div>
+          <figure class="region-panel__art">
+            <img src="assets/img/socal-coast.jpg" alt="Aerial view of the La Jolla and San Diego coastline in Southern California" loading="lazy" width="3840" height="2561" />
+            <span class="art-tag">La Jolla · submarine canyon coast</span>
+          </figure>
         </article>
+      </div>
+    </section>
+
+    <!-- image band: data center -->
+    <section class="imgband" aria-label="Deep-sea cooling">
+      <img src="assets/img/datacenter.jpg" alt="Rows of data-center server bays with green status lights" loading="lazy" />
+      <div class="imgband__inner reveal">
+        <p class="imgband__kicker">The intelligence age runs hot</p>
+        <h2 class="imgband__title">We cool it with 4&nbsp;°C water from the abyss.</h2>
+        <p class="imgband__sub">Direct-to-chip immersion cooling fed by deep-sea water drives data-center Power Usage Effectiveness to 1.02–1.05 — and the power is 100% zero-emission.</p>
       </div>
     </section>
 
@@ -305,10 +319,64 @@
       </div>
     </section>
 
+    <!-- ============ SCHEMATICS ============ -->
+    <section class="section" id="schematics">
+      <div class="section__head reveal">
+        <span class="kicker">05 — Diagrams &amp; Schematics</span>
+        <h2 class="section__title">The engineering, drawn to scale.</h2>
+        <p class="section__lead">Process schematics for each core subsystem — the closed-cycle power loop, the rig
+          retrofit, the urban cooling district, and the zero-discharge mineral train.</p>
+      </div>
+      <div class="schem-grid">
+        <figure class="figure reveal">
+          <div class="figure__media"><img src="assets/diagrams/otec-cycle.svg" alt="Closed-cycle ammonia OTEC schematic showing evaporator, turbine-generator, condenser and the cold-water loop" loading="lazy" /></div>
+          <figcaption>
+            <span class="figure__tag">FIG 01 — POWER CYCLE</span>
+            <h3>Closed-Cycle Ammonia OTEC</h3>
+            <p>Warm surface water boils anhydrous ammonia to spin a turbine; 4&nbsp;°C deep water condenses it — a continuous Rankine loop across a 20&nbsp;°C gradient.</p>
+          </figcaption>
+        </figure>
+        <figure class="figure reveal">
+          <div class="figure__media"><img src="assets/diagrams/rig-retrofit.svg" alt="Cross-section of a Spar platform retrofit with AI modules on deck and a 3,000 foot cold-water pipe in the moonpool" loading="lazy" /></div>
+          <figcaption>
+            <span class="figure__tag">FIG 02 — RIG RETROFIT</span>
+            <h3>Spar Platform → AI Compute</h3>
+            <p>The moonpool houses a 3,000-ft cold-water pipe; OTEC powers deck-mounted, immersion-cooled AI modules off-grid, exporting green hydrogen and ammonia.</p>
+          </figcaption>
+        </figure>
+        <figure class="figure reveal">
+          <div class="figure__media"><img src="assets/diagrams/swac-loop.svg" alt="Florida SWAC schematic: offshore plantship feeds the grid and a mainland district cooling loop" loading="lazy" /></div>
+          <figcaption>
+            <span class="figure__tag">FIG 03 — URBAN COOLING</span>
+            <h3>Gulf-Stream SWAC District Loop</h3>
+            <p>A floating plantship injects baseload power to the grid and pipes cold water ashore to cool downtown carrier hotels, edge data centers, and high-rises.</p>
+          </figcaption>
+        </figure>
+        <figure class="figure reveal">
+          <div class="figure__media"><img src="assets/diagrams/zld-train.svg" alt="Vacuum-flash desalination and zero liquid discharge crystallization schematic" loading="lazy" /></div>
+          <figcaption>
+            <span class="figure__tag">FIG 04 — WATER &amp; MINERALS</span>
+            <h3>Vacuum-Flash Desal + ZLD</h3>
+            <p>Low-pressure flash chambers make potable water at a fraction of RO energy; the brine is crystallized into salt, magnesium, and battery minerals — zero discharge.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- image band: salt ponds -->
+    <section class="imgband" aria-label="Circular mineral economy">
+      <img src="assets/img/salt-ponds.jpg" alt="Aerial view of colorful coastal salt-evaporation ponds" loading="lazy" />
+      <div class="imgband__inner reveal">
+        <p class="imgband__kicker">Zero liquid discharge</p>
+        <h2 class="imgband__title">The brine others dump, we crystallize into commodities.</h2>
+        <p class="imgband__sub">Fractional crystallization turns waste brine into salt, magnesium, lithium and potassium — eliminating toxic discharge and opening a fourth revenue stream.</p>
+      </div>
+    </section>
+
     <!-- ============ CIRCULAR ECONOMY ============ -->
     <section class="section section--mineral" id="mineral">
       <div class="section__head reveal">
-        <span class="kicker">05 — Circular Economy</span>
+        <span class="kicker">06 — Circular Economy</span>
         <h2 class="section__title">We don't dump brine. We mine it.</h2>
         <p class="section__lead">Traditional desalination kills marine life with hyper-saline discharge.
           TROIB's Zero Liquid Discharge process evaporates brine entirely, segmenting it into
@@ -339,7 +407,7 @@
     <!-- ============ FORECASTS ============ -->
     <section class="section" id="forecast">
       <div class="section__head reveal">
-        <span class="kicker">06 — 10-Year Forecast</span>
+        <span class="kicker">07 — 10-Year Forecast</span>
         <h2 class="section__title">Phased from pilot to commercial maturity.</h2>
         <p class="section__lead">Year 1–3 pilot (1 Gulf rig · 1 Florida plantship · 1 California facility) →
           Year 4–7 scale (5 · 3 · 2) → Year 10 full commercial maturity.</p>
@@ -357,7 +425,7 @@
     <!-- ============ FINANCIALS ============ -->
     <section class="section section--fin" id="financials">
       <div class="section__head reveal">
-        <span class="kicker">07 — Pro-Forma Financials</span>
+        <span class="kicker">08 — Pro-Forma Financials</span>
         <h2 class="section__title">Four revenue streams. One de-risked thesis.</h2>
         <p class="section__lead">Diversification across data centers, grid power, water, minerals, and green
           fuel drastically lowers investor risk versus single-utility infrastructure. All figures in USD millions.</p>
@@ -403,7 +471,7 @@
     <!-- ============ ADVANTAGES ============ -->
     <section class="section" id="advantages">
       <div class="section__head reveal">
-        <span class="kicker">08 — Strategic Moat</span>
+        <span class="kicker">09 — Strategic Moat</span>
         <h2 class="section__title">Why TROIB wins the decade.</h2>
       </div>
       <div class="adv-grid">
@@ -428,10 +496,83 @@
       </div>
     </section>
 
+    <!-- ============ "TRUE GREEN ENERGY" AD ============ -->
+    <section class="ev-ad" id="true-green" aria-label="True Green Energy">
+      <img class="ev-ad__bg" src="assets/img/coal-plant.jpg" alt="Coal-fired power plant with smokestacks and cooling towers emitting plumes over a green field" loading="lazy" />
+      <div class="ev-ad__inner reveal">
+        <span class="ev-ad__badge"><span class="dot" style="width:7px;height:7px;border-radius:50%;background:#ff7a45;display:inline-block"></span> True Green Energy</span>
+        <h2 class="ev-ad__head">Your “zero-emissions” EV is plugged into a <span class="hot">coal&nbsp;plant.</span></h2>
+        <p class="ev-ad__body">The tailpipe didn’t disappear — it just moved. Across much of America’s grid, the
+          power charging that battery is dialed straight out of a <strong>coal- and gas-fired power plant</strong>
+          hundreds of miles away. The smoke is real. It’s just billowing somewhere you’ll never see it,
+          behind a marketing sticker that says “clean.”</p>
+        <div class="ev-ad__rule"></div>
+        <p class="ev-ad__answer">TROIB doesn’t relocate the smokestack. <b>It eliminates it</b> — electricity born
+          from the ocean’s own heat. Nothing burned. Nothing mined. Nothing emitted.</p>
+        <p class="ev-ad__stamp"><span class="dot"></span> True Green Energy · Powered by the Sea</p>
+        <p class="ev-ad__disclaim">U.S. grid generation mix varies by region and season; fossil fuels — coal and
+          natural gas — still supply a large share of the electricity that charges grid-tied electric vehicles.</p>
+      </div>
+    </section>
+
+    <!-- ============ TECHNICAL LIBRARY ============ -->
+    <section class="section" id="library">
+      <div class="section__head reveal">
+        <span class="kicker">10 — Technical Library</span>
+        <h2 class="section__title">Engineering white papers.</h2>
+        <p class="section__lead">Conceptual engineering briefs detailing the thermodynamics, system architecture, and
+          process design behind each TROIB subsystem. Open on screen or print to PDF.</p>
+      </div>
+      <div class="lib-grid">
+        <div class="paper-card reveal">
+          <span class="paper-card__doc">EB<br/>01</span>
+          <div class="paper-card__main">
+            <h3><a href="papers/otec-thermodynamics.html">Closed-Cycle Ammonia OTEC: Thermodynamic Basis &amp; Net Power Yield</a></h3>
+            <p>Carnot limits, the ammonia Rankine cycle, parasitic cold-water pumping, and gross-vs-net power across the rollout.</p>
+            <div class="paper-card__links"><span class="doc">TROIB-EB-01</span> <a href="papers/otec-thermodynamics.html">Read →</a> <a href="papers/otec-thermodynamics.pdf">PDF ↓</a></div>
+          </div>
+        </div>
+        <div class="paper-card reveal">
+          <span class="paper-card__doc">EB<br/>02</span>
+          <div class="paper-card__main">
+            <h3><a href="papers/rig-to-datacenter.html">Co-Locating AI Compute on Decommissioned Deepwater Platforms</a></h3>
+            <p>Spar/TLP moonpool retrofits, direct-to-chip seawater immersion cooling, PUE 1.02–1.05, and the Rigs-to-Reefs CapEx edge.</p>
+            <div class="paper-card__links"><span class="doc">TROIB-EB-02</span> <a href="papers/rig-to-datacenter.html">Read →</a> <a href="papers/rig-to-datacenter.pdf">PDF ↓</a></div>
+          </div>
+        </div>
+        <div class="paper-card reveal">
+          <span class="paper-card__doc">EB<br/>03</span>
+          <div class="paper-card__main">
+            <h3><a href="papers/swac-district-cooling.html">Sea Water Air Conditioning for Coastal Data &amp; Urban Loads</a></h3>
+            <p>Gulf-Stream plantships, subsea grid injection, and a mainland district loop that retires mechanical chillers.</p>
+            <div class="paper-card__links"><span class="doc">TROIB-EB-03</span> <a href="papers/swac-district-cooling.html">Read →</a> <a href="papers/swac-district-cooling.pdf">PDF ↓</a></div>
+          </div>
+        </div>
+        <div class="paper-card reveal">
+          <span class="paper-card__doc">EB<br/>04</span>
+          <div class="paper-card__main">
+            <h3><a href="papers/zld-mineral-recovery.html">Zero Liquid Discharge &amp; Marine Mineral Recovery</a></h3>
+            <p>Vacuum-flash desalination, staged crystallization by solubility, and the salt / magnesium / battery-mineral portfolio.</p>
+            <div class="paper-card__links"><span class="doc">TROIB-EB-04</span> <a href="papers/zld-mineral-recovery.html">Read →</a> <a href="papers/zld-mineral-recovery.pdf">PDF ↓</a></div>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top:1.6rem"><a class="btn btn--ghost" href="papers/index.html">Browse the full Technical Library →</a></p>
+    </section>
+
+    <!-- image band: closing -->
+    <section class="imgband imgband--center" aria-label="Partner with TROIB">
+      <img src="assets/img/ocean-aerial.jpg" alt="Aerial view of turquoise ocean surf meeting the shore" loading="lazy" />
+      <div class="imgband__inner reveal" style="text-align:center">
+        <p class="imgband__kicker">The opportunity is the size of the ocean</p>
+        <h2 class="imgband__title" style="max-width:24ch;margin-inline:auto">Four utilities. One zero-emission network.</h2>
+      </div>
+    </section>
+
     <!-- ============ INVEST / CTA ============ -->
     <section class="section section--cta" id="invest">
       <div class="cta reveal">
-        <span class="kicker">09 — Partner With TROIB</span>
+        <span class="kicker">11 — Partner With TROIB</span>
         <h2>Power the intelligence age<br/>without burning the planet.</h2>
         <p>We're assembling capital, hyperscale offtake partners, and coastal development allies for the
           pilot phase. If you're building the future of AI, water, or clean energy — let's talk.</p>
@@ -456,7 +597,8 @@
         <a href="#crisis">The Thesis</a>
         <a href="#blueprint">Blueprint</a>
         <a href="#regions">Regions</a>
-        <a href="#forecast">Forecasts</a>
+        <a href="#schematics">Schematics</a>
+        <a href="#library">White Papers</a>
         <a href="#financials">Financials</a>
         <a href="#invest">Invest</a>
       </nav>
@@ -464,6 +606,10 @@
     <div class="footer__bar">
       <span>© <span id="year">2026</span> TROIB. All rights reserved.</span>
       <span class="footer__note">Forward-looking projections; not an offer to sell securities.</span>
+    </div>
+    <div class="footer__bar">
+      <span class="credits">Schematics © TROIB. Photography via <a href="https://unsplash.com/license" rel="noopener" target="_blank">Unsplash</a> (free for commercial use).</span>
+      <span class="credits">Conceptual engineering briefs — illustrative, not measured results.</span>
     </div>
   </footer>
 

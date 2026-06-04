@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technical Library — TROIB Engineering Briefs</title>
+  <meta name="description" content="Conceptual engineering white papers for the Tri-Regional Ocean Infrastructure Blueprint (TROIB): OTEC thermodynamics, rig-to-datacenter retrofit, SWAC district cooling, and zero-liquid-discharge mineral recovery." />
+  <meta name="theme-color" content="#04111f" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="canonical" href="https://troip.xyz/papers/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="TROIB Technical Library — Engineering White Papers" />
+  <meta property="og:description" content="Four conceptual engineering briefs behind the Tri-Regional Ocean Infrastructure Blueprint." />
+  <meta property="og:url" content="https://troip.xyz/papers/" />
+  <meta property="og:site_name" content="TROIB" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="paper.css" />
+  <style>
+    .lib { max-width: 880px; margin: 0 auto; padding: clamp(2.5rem,6vw,5rem) clamp(1.25rem,5vw,2rem); }
+    .lib__eyebrow { font-family:"Space Mono",monospace; font-size:.72rem; letter-spacing:.26em; text-transform:uppercase; color:#00e0c7; }
+    .lib__title { font-family:"Archivo Expanded",sans-serif; font-weight:800; font-size:clamp(2rem,5vw,3.2rem); line-height:1.05; margin:1rem 0 .6rem;
+      background-image:linear-gradient(176deg,#fff,#e4e9f0 22%,#b3bcca 44%,#828c9b 52%,#aab3c1 62%,#e8edf3 82%,#fff);
+      -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent; }
+    .lib__lead { color:#8fa6b2; max-width:62ch; font-size:1.08rem; }
+    .lib__list { display:grid; gap:1.1rem; margin-top:2.5rem; }
+    .lib__card { display:flex; gap:1.2rem; align-items:flex-start; padding:1.6rem; border:1px solid rgba(143,166,178,.18); border-radius:16px; background:#0a1c2e; transition:.3s cubic-bezier(.22,.61,.36,1); }
+    .lib__card:hover { border-color:rgba(0,224,199,.4); transform:translateY(-4px); }
+    .lib__doc { flex:none; font-family:"Space Mono",monospace; font-size:.66rem; color:#ffd166; border:1px solid rgba(143,166,178,.18); border-radius:9px; padding:.55rem; text-align:center; line-height:1.5; }
+    .lib__card h2 { font-family:"Archivo Expanded",sans-serif; font-weight:700; font-size:1.12rem; line-height:1.25; }
+    .lib__card h2 a { color:#eaf4f4; }
+    .lib__card h2 a:hover { color:#00e0c7; }
+    .lib__card p { color:#8fa6b2; font-size:.92rem; margin:.45rem 0 .8rem; }
+    .lib__links { display:flex; flex-wrap:wrap; gap:.55rem; align-items:center; font-family:"Space Mono",monospace; font-size:.72rem; }
+    .lib__links .docno { color:#5d7585; }
+    .lib__links a { color:#00e0c7; border:1px solid rgba(0,224,199,.35); border-radius:8px; padding:.3rem .65rem; transition:.25s; }
+    .lib__links a:hover { background:rgba(0,224,199,.12); }
+    .lib__back { display:inline-flex; align-items:center; gap:.5rem; font-family:"Space Mono",monospace; font-size:.8rem; color:#8fa6b2; margin-bottom:2rem; }
+    .lib__note { margin-top:2.5rem; font-family:"Space Mono",monospace; font-size:.72rem; color:#5d7585; max-width:70ch; }
+  </style>
+</head>
+<body>
+  <div class="bg-nothing" aria-hidden="true"></div>
+  <main class="lib">
+    <a class="lib__back" href="../index.html">&larr; Back to TROIB</a>
+    <p class="lib__eyebrow">TROIB · Technical Library</p>
+    <h1 class="lib__title">Engineering White Papers</h1>
+    <p class="lib__lead">Conceptual engineering briefs detailing the thermodynamics, system architecture, and
+      process design behind each TROIB subsystem. Read on screen, print to PDF, or download the PDF directly.</p>
+
+    <div class="lib__list">
+      <article class="lib__card">
+        <span class="lib__doc">EB<br/>01</span>
+        <div>
+          <h2><a href="otec-thermodynamics.html">Closed-Cycle Ammonia OTEC: Thermodynamic Basis &amp; Net Power Yield</a></h2>
+          <p>Carnot ceiling, the anhydrous-ammonia Rankine cycle, parasitic cold-water pumping, and gross-vs-net power across the rollout.</p>
+          <div class="lib__links"><span class="docno">TROIB-EB-01</span> <a href="otec-thermodynamics.html">Read →</a> <a href="otec-thermodynamics.pdf">Download PDF ↓</a></div>
+        </div>
+      </article>
+      <article class="lib__card">
+        <span class="lib__doc">EB<br/>02</span>
+        <div>
+          <h2><a href="rig-to-datacenter.html">Co-Locating AI Compute on Decommissioned Deepwater Platforms</a></h2>
+          <p>Spar/TLP moonpool retrofits, direct-to-chip seawater immersion cooling, PUE 1.02–1.05, and the Rigs-to-Reefs CapEx edge.</p>
+          <div class="lib__links"><span class="docno">TROIB-EB-02</span> <a href="rig-to-datacenter.html">Read →</a> <a href="rig-to-datacenter.pdf">Download PDF ↓</a></div>
+        </div>
+      </article>
+      <article class="lib__card">
+        <span class="lib__doc">EB<br/>03</span>
+        <div>
+          <h2><a href="swac-district-cooling.html">Sea Water Air Conditioning for Coastal Data &amp; Urban Loads</a></h2>
+          <p>Gulf-Stream plantships, subsea grid injection, and a mainland district loop that retires mechanical chillers.</p>
+          <div class="lib__links"><span class="docno">TROIB-EB-03</span> <a href="swac-district-cooling.html">Read →</a> <a href="swac-district-cooling.pdf">Download PDF ↓</a></div>
+        </div>
+      </article>
+      <article class="lib__card">
+        <span class="lib__doc">EB<br/>04</span>
+        <div>
+          <h2><a href="zld-mineral-recovery.html">Zero Liquid Discharge &amp; Marine Mineral Recovery</a></h2>
+          <p>Vacuum-flash desalination, staged crystallization by solubility, and the salt / magnesium / battery-mineral portfolio.</p>
+          <div class="lib__links"><span class="docno">TROIB-EB-04</span> <a href="zld-mineral-recovery.html">Read →</a> <a href="zld-mineral-recovery.pdf">Download PDF ↓</a></div>
+        </div>
+      </article>
+    </div>
+
+    <p class="lib__note">Conceptual engineering briefs — figures and projections are illustrative and forward-looking,
+      not built or independently verified results. © 2026 TROIB · troip.xyz</p>
+  </main>
+</body>
+</html>
